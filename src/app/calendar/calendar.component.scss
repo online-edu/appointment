@@ -1,0 +1,61 @@
+.calendar{
+    margin: 20px 120px;
+    height: 700px;
+    width: 1200px;
+    max-width: 1200px;    
+    border: thin solid #dedede;
+    .header{
+        height: 60px;
+        width: 79.5%;
+        padding-left: 55px;
+        background-color: #EAEAEA;
+        position: fixed;
+        .day{
+            display: inline-block;
+            width: 14%;
+            height:100%;
+            line-height: 60px;            
+            text-align: center;    
+            color: #686868;
+            // border: thin solid #00FF00;
+        }
+    }
+    .body{
+        margin: 60px auto;
+        max-height: 600px;
+        overflow-y: auto;
+        .time-strip{
+            float: left;
+            height:100%;
+            padding-top: 15px;
+            text-align: center;                
+            color: #686868;
+            .hour{
+                min-height: 50px;                    
+                padding: 19px;  
+                line-height: 40px;                          
+            }
+        }
+        .schdule-strip{        
+            .appointment{                
+                display: inline-block;                
+                width: 160.5px;
+                height:100%;
+                padding-top: 15px;
+                text-align: center;                
+                color: #686868;
+                .hourly{
+                    border-bottom: thin solid #dedede;
+                    min-height: 50px;                    
+                    padding: 19px;                    
+                    transition: all 0.2s ease-in;
+                    line-height: 40px;            
+                    &:hover{
+                        background-color:#dedede;
+                        cursor: pointer; 
+                    }
+                }
+            }
+        }
+    }
+}

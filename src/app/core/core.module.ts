@@ -6,6 +6,7 @@ import { NgModule, Optional, SkipSelf } from '@angular/core';
 import { LoggerService } from "./logger.service";
 import { throwIfAlreadyLoaded } from "./module-import-guard";
 import { MaterialModule } from "./material-module";
+import { NavComponent } from "./nav/nav.component";
 
 const CommonModules = [MaterialModule];
 
@@ -16,8 +17,8 @@ const CommonModules = [MaterialModule];
     FormsModule,
     HttpModule
   ],
-  declarations: [],
-  exports: [...CommonModules],
+  declarations: [NavComponent],
+  exports: [...CommonModules, NavComponent],
   providers: [LoggerService]
 })
 export class CoreModule {
