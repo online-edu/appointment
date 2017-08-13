@@ -50,7 +50,7 @@ exports = module.exports = __webpack_require__(31)();
 exports.i(__webpack_require__(222), "");
 
 // module
-exports.push([module.i, "body {\n  font-family: 'Roboto';\n  margin: 0 !important;\n  -webkit-font-smoothing: antialiased;\n  text-rendering: optimizeLegibility; }\n", ""]);
+exports.push([module.i, "body {\n  font-family: 'Roboto';\n  margin: 0 !important;\n  -webkit-font-smoothing: antialiased;\n  text-rendering: optimizeLegibility; }\n  body .loading {\n    visibility: visible !important;\n    position: fixed;\n    top: 50%;\n    left: 50%;\n    -webkit-transform: translate(-50%, -50%);\n            transform: translate(-50%, -50%); }\n", ""]);
 
 // exports
 
