@@ -1,0 +1,51 @@
+<form [formGroup]="appointment" (ngSubmit)="onSubmit(appointment)">
+  <h1 md-dialog-title>New Appointment</h1>
+  <div md-dialog-content>
+    <md-input-container>
+      <input type="text" class="input" mdInput formControlName="name" placeholder="Full Name">
+      <md-icon mdSuffix>account_circle</md-icon>
+      <md-error *ngIf="appointment.get('email').hasError('required')">
+        Name is <strong>required</strong>
+      </md-error>
+    </md-input-container>
+    <md-input-container>
+      <input mdInput placeholder="Email" formControlName="email">
+      <md-icon mdSuffix>email</md-icon>
+      <!--<md-error *ngIf="appointment.get('email').hasError('pattern')">
+                Please enter a valid email address
+              </md-error>-->
+      <md-error *ngIf="appointment.get('email').hasError('required')">
+        Email is <strong>required</strong>
+      </md-error>
+    </md-input-container>
+    <md-input-container>
+      <span mdPrefix>+1 &nbsp;</span>
+      <input type="tel" mdInput formControlName="mobile" placeholder="Mobile">
+      <md-icon mdSuffix>phone</md-icon>
+    </md-input-container>
+    <!-- <md-grid-list cols="2" rowHeight="100px">
+      <md-grid-tile>
+        <md-input-container>
+          <input type="datetime-local" mdInput formControlName="startTime" placeholder="From">
+          
+          <md-error *ngIf="appointment.get('startTime').hasError('required')">
+            Choose start <strong>timings</strong>
+          </md-error>
+        </md-input-container>
+      </md-grid-tile>
+      <md-grid-tile>
+        <md-input-container>
+          <input type="datetime-local" mdInput formControlName="endTime" placeholder="To">
+          
+          <md-error *ngIf="appointment.get('endTime').hasError('required')">
+            Choose end <strong>timings</strong>
+          </md-error>
+        </md-input-container>
+      </md-grid-tile>
+    </md-grid-list> -->
+  </div>
+  <div md-dialog-actions>
+    <button md-button md-dialog-close class="flat">Cancel</button>
+    <button type="submit" color="primary" md-raised-button>Create</button>
+  </div>
+</form>

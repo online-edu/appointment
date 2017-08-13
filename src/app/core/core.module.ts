@@ -1,5 +1,4 @@
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { NgModule, Optional, SkipSelf } from '@angular/core';
 
@@ -14,7 +13,6 @@ const CommonModules = [MaterialModule];
   imports: [
     CommonModule,
     ...CommonModules,
-    FormsModule,
     HttpModule
   ],
   declarations: [NavComponent],
