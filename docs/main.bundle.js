@@ -100,37 +100,20 @@ MaterialModule = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["b" /* NgModule */])({
         exports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_cdk__["_0" /* CdkTableModule */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_material__["e" /* MdAutocompleteModule */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_material__["f" /* MdButtonModule */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_material__["g" /* MdButtonToggleModule */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_material__["h" /* MdCardModule */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_material__["i" /* MdCheckboxModule */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_material__["j" /* MdChipsModule */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_material__["k" /* MdCoreModule */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_material__["l" /* MdDatepickerModule */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_material__["m" /* MdDialogModule */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_material__["n" /* MdExpansionModule */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_material__["o" /* MdGridListModule */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_material__["p" /* MdIconModule */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_material__["q" /* MdInputModule */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_material__["r" /* MdListModule */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_material__["s" /* MdMenuModule */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_material__["t" /* MdNativeDateModule */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_material__["u" /* MdPaginatorModule */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_material__["v" /* MdProgressBarModule */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_material__["w" /* MdProgressSpinnerModule */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_material__["x" /* MdRadioModule */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_material__["y" /* MdRippleModule */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_material__["z" /* MdSelectModule */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_material__["A" /* MdSidenavModule */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_material__["B" /* MdSliderModule */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_material__["C" /* MdSlideToggleModule */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_material__["D" /* MdSnackBarModule */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_material__["E" /* MdSortModule */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_material__["F" /* MdTableModule */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_material__["G" /* MdTabsModule */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_material__["H" /* MdToolbarModule */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_material__["I" /* MdTooltipModule */]
+            __WEBPACK_IMPORTED_MODULE_2__angular_material__["e" /* MdButtonModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_material__["f" /* MdButtonToggleModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_material__["g" /* MdCardModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_material__["h" /* MdCoreModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_material__["i" /* MdDialogModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_material__["j" /* MdIconModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_material__["k" /* MdInputModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_material__["l" /* MdListModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_material__["m" /* MdMenuModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_material__["n" /* MdRippleModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_material__["o" /* MdSelectModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_material__["p" /* MdSnackBarModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_material__["q" /* MdToolbarModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_material__["r" /* MdTooltipModule */]
         ]
     })
 ], MaterialModule);
@@ -311,8 +294,8 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_pubnub_angular2___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_pubnub_angular2__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_hammerjs__ = __webpack_require__(226);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_hammerjs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_hammerjs__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__core_core_module__ = __webpack_require__(167);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_routing_module__ = __webpack_require__(164);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_routing_module__ = __webpack_require__(164);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__core_core_module__ = __webpack_require__(167);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__app_component__ = __webpack_require__(165);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__shared_services_rest_api__ = __webpack_require__(158);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
@@ -344,10 +327,10 @@ AppModule = __decorate([
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
             __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
-            __WEBPACK_IMPORTED_MODULE_5__core_core_module__["a" /* CoreModule */],
-            __WEBPACK_IMPORTED_MODULE_6__app_routing_module__["a" /* AppRoutingModule */]
+            __WEBPACK_IMPORTED_MODULE_6__core_core_module__["a" /* CoreModule */],
+            __WEBPACK_IMPORTED_MODULE_5__app_routing_module__["a" /* AppRoutingModule */]
         ],
-        providers: [__WEBPACK_IMPORTED_MODULE_8__shared_services_rest_api__["a" /* RestApi */], __WEBPACK_IMPORTED_MODULE_3_pubnub_angular2__["PubNubAngular"]],
+        providers: [__WEBPACK_IMPORTED_MODULE_3_pubnub_angular2__["PubNubAngular"], __WEBPACK_IMPORTED_MODULE_8__shared_services_rest_api__["a" /* RestApi */]],
         bootstrap: [__WEBPACK_IMPORTED_MODULE_7__app_component__["a" /* AppComponent */]]
     })
 ], AppModule);
@@ -387,7 +370,6 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 
 
 
-var CommonModules = [__WEBPACK_IMPORTED_MODULE_5__material_module__["a" /* MaterialModule */]];
 var CoreModule = (function () {
     function CoreModule(parentModule) {
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4__module_import_guard__["a" /* throwIfAlreadyLoaded */])(parentModule, 'CoreModule');
@@ -397,15 +379,15 @@ var CoreModule = (function () {
 CoreModule = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__angular_core__["b" /* NgModule */])({
         imports: [
-            __WEBPACK_IMPORTED_MODULE_0__angular_common__["a" /* CommonModule */]
-        ].concat(CommonModules, [
-            __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* HttpModule */]
-        ]),
+            __WEBPACK_IMPORTED_MODULE_0__angular_common__["a" /* CommonModule */],
+            __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* HttpModule */],
+            __WEBPACK_IMPORTED_MODULE_5__material_module__["a" /* MaterialModule */]
+        ],
         declarations: [__WEBPACK_IMPORTED_MODULE_6__nav_nav_component__["a" /* NavComponent */]],
-        exports: CommonModules.concat([__WEBPACK_IMPORTED_MODULE_6__nav_nav_component__["a" /* NavComponent */]]),
+        exports: [__WEBPACK_IMPORTED_MODULE_5__material_module__["a" /* MaterialModule */], __WEBPACK_IMPORTED_MODULE_6__nav_nav_component__["a" /* NavComponent */]],
         providers: [__WEBPACK_IMPORTED_MODULE_3__logger_service__["a" /* LoggerService */]]
     }),
-    __param(0, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__angular_core__["j" /* Optional */])()), __param(0, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__angular_core__["n" /* SkipSelf */])()),
+    __param(0, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__angular_core__["r" /* Optional */])()), __param(0, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__angular_core__["H" /* SkipSelf */])()),
     __metadata("design:paramtypes", [CoreModule])
 ], CoreModule);
 

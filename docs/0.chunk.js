@@ -4,14 +4,14 @@ webpackJsonp([0,6],Array(502).concat([
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(154);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__core_material_module__ = __webpack_require__(157);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__calendar_routing_module__ = __webpack_require__(626);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__calendar_component__ = __webpack_require__(504);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__calendar_routing_module__ = __webpack_require__(625);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__calendar_component__ = __webpack_require__(504);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__core_material_module__ = __webpack_require__(157);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__week_dialog_dialog_component__ = __webpack_require__(506);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__week_week_component__ = __webpack_require__(508);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__week_week_component__ = __webpack_require__(628);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CalendarModule", function() { return CalendarModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -33,18 +33,17 @@ var CalendarModule = (function () {
     return CalendarModule;
 }());
 CalendarModule = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["b" /* NgModule */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["b" /* NgModule */])({
         imports: [
-            __WEBPACK_IMPORTED_MODULE_1__angular_common__["a" /* CommonModule */],
-            __WEBPACK_IMPORTED_MODULE_3__core_material_module__["a" /* MaterialModule */],
+            __WEBPACK_IMPORTED_MODULE_3__calendar_routing_module__["a" /* CalendarRoutingModule */],
+            __WEBPACK_IMPORTED_MODULE_0__angular_common__["a" /* CommonModule */],
             __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormsModule */],
+            __WEBPACK_IMPORTED_MODULE_5__core_material_module__["a" /* MaterialModule */],
             __WEBPACK_IMPORTED_MODULE_2__angular_forms__["b" /* ReactiveFormsModule */],
-            __WEBPACK_IMPORTED_MODULE_4__calendar_routing_module__["a" /* CalendarRoutingModule */]
         ],
         providers: [],
-        declarations: [__WEBPACK_IMPORTED_MODULE_5__calendar_component__["a" /* CalendarComponent */], __WEBPACK_IMPORTED_MODULE_6__week_dialog_dialog_component__["a" /* DialogComponent */], __WEBPACK_IMPORTED_MODULE_7__week_week_component__["a" /* WeekComponent */]],
-        entryComponents: [__WEBPACK_IMPORTED_MODULE_6__week_dialog_dialog_component__["a" /* DialogComponent */]],
-        exports: [__WEBPACK_IMPORTED_MODULE_5__calendar_component__["a" /* CalendarComponent */]]
+        declarations: [__WEBPACK_IMPORTED_MODULE_4__calendar_component__["a" /* CalendarComponent */], __WEBPACK_IMPORTED_MODULE_6__week_dialog_dialog_component__["a" /* DialogComponent */], __WEBPACK_IMPORTED_MODULE_7__week_week_component__["a" /* WeekComponent */]],
+        entryComponents: [__WEBPACK_IMPORTED_MODULE_6__week_dialog_dialog_component__["a" /* DialogComponent */]]
     })
 ], CalendarModule);
 
@@ -4518,7 +4517,7 @@ return hooks;
 
 })));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(625)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(624)(module)))
 
 /***/ }),
 /* 504 */
@@ -4526,6 +4525,7 @@ return hooks;
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(23);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CalendarComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -4537,8 +4537,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
 var CalendarComponent = (function () {
-    function CalendarComponent() {
+    function CalendarComponent(titleService) {
+        this.titleService = titleService;
+        this.titleService.setTitle('Calendar');
     }
     return CalendarComponent;
 }());
@@ -4548,9 +4551,10 @@ CalendarComponent = __decorate([
         template: __webpack_require__(634),
         styles: [__webpack_require__(630)],
     }),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["c" /* Title */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["c" /* Title */]) === "function" && _a || Object])
 ], CalendarComponent);
 
+var _a;
 //# sourceMappingURL=calendar.component.js.map
 
 /***/ }),
@@ -4560,11 +4564,9 @@ CalendarComponent = __decorate([
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_material__ = __webpack_require__(153);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_BehaviorSubject__ = __webpack_require__(45);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_BehaviorSubject___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_BehaviorSubject__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__shared_appointment__ = __webpack_require__(507);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_BehaviorSubject__ = __webpack_require__(45);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_BehaviorSubject___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_BehaviorSubject__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__shared_appointment__ = __webpack_require__(507);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppointmentService; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -4579,17 +4581,28 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-
+/**
+ * Manages appointments operations.
+ *
+ * `AppointmentService` is available as an injectable class, with various methods.
+ */
 var AppointmentService = (function () {
     function AppointmentService(snackBar) {
         var _this = this;
         this.snackBar = snackBar;
-        this.appointment$ = new __WEBPACK_IMPORTED_MODULE_3_rxjs_BehaviorSubject__["BehaviorSubject"](new __WEBPACK_IMPORTED_MODULE_4__shared_appointment__["a" /* Appointment */]());
+        this.appointment$ = new __WEBPACK_IMPORTED_MODULE_2_rxjs_BehaviorSubject__["BehaviorSubject"](new __WEBPACK_IMPORTED_MODULE_3__shared_appointment__["a" /* Appointment */]());
+        /**
+        * Updates view for new subscriptions modifications.
+        */
         this.update = function (appointment) { return _this.appointment$.next(appointment); };
+        /**
+        * Observes active user's subscription for new messages.
+        */
         this.sync = function () { return _this.appointment$.asObservable(); };
-        // getAll = () => this.restApi.get('slots.json');
-        this.getAll = function () { return __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["Observable"].of({}); };
     }
+    /**
+    * Notifies user on specific activity.
+    */
     AppointmentService.prototype.notifyUser = function (message, action) {
         this.snackBar.open(message, action, {
             duration: 3500,
@@ -4638,7 +4651,6 @@ var DialogComponent = (function () {
         this.formBuilder = formBuilder;
     }
     DialogComponent.prototype.ngOnInit = function () {
-        console.log(this.currentEvent);
         this.appointment = this.formBuilder.group({
             name: ['', [__WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].minLength(2), __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].maxLength(30)]],
             email: ['', [__WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].minLength(8), __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* Validators */].maxLength(30)]],
@@ -4663,7 +4675,7 @@ DialogComponent = __decorate([
         template: __webpack_require__(635),
         styles: [__webpack_require__(631)]
     }),
-    __param(0, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["k" /* Inject */])(__WEBPACK_IMPORTED_MODULE_1__angular_material__["c" /* MD_DIALOG_DATA */])),
+    __param(0, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["i" /* Inject */])(__WEBPACK_IMPORTED_MODULE_1__angular_material__["c" /* MD_DIALOG_DATA */])),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3__shared_appointment__["a" /* Appointment */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__shared_appointment__["a" /* Appointment */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_material__["d" /* MdDialogRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_material__["d" /* MdDialogRef */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__angular_forms__["i" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_forms__["i" /* FormBuilder */]) === "function" && _c || Object])
 ], DialogComponent);
 
@@ -4686,180 +4698,6 @@ var Appointment = (function () {
 
 /***/ }),
 /* 508 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_material__ = __webpack_require__(153);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_lodash__ = __webpack_require__(509);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_lodash___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_lodash__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__dialog_dialog_component__ = __webpack_require__(506);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__appointment_appointment_service__ = __webpack_require__(505);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__shared_services_pubnub_service__ = __webpack_require__(629);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__shared_util_service__ = __webpack_require__(628);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__day_day__ = __webpack_require__(627);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__shared_services_rest_api__ = __webpack_require__(158);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return WeekComponent; });
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-
-
-
-
-var ACTION = "Okay";
-var NOT_AVAIBLE = "That slot is not available. We are sorry for inconvenience!";
-var WeekComponent = (function () {
-    function WeekComponent(dialog, restApi, pubNub, util, appointment) {
-        var _this = this;
-        this.dialog = dialog;
-        this.restApi = restApi;
-        this.pubNub = pubNub;
-        this.util = util;
-        this.appointment = appointment;
-        this.days = __WEBPACK_IMPORTED_MODULE_7__day_day__["a" /* Days */].all();
-        this.hours = this.util.getHours(24);
-        this.day = new __WEBPACK_IMPORTED_MODULE_7__day_day__["a" /* Days */]();
-        this.getStyle = function (event) { return _this.util.style(event); };
-        this.onEventClick = function (event) { return (event.available) ? _this.createAppointment(event) : _this.appointment.notifyUser(NOT_AVAIBLE, ACTION); };
-        this.pubNub.init();
-        this.pubNub.subscribe();
-        this.appointment.sync().subscribe(function (appointment) {
-            var tempAppointment = appointment;
-            if (tempAppointment.message) {
-                _this.updateAppointments(tempAppointment.message.day, tempAppointment.message, true);
-            }
-        });
-    }
-    WeekComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        this.restApi.get('slots.json').
-            subscribe(function (appointments) {
-            _this.appointments = appointments;
-            _this.init();
-        });
-    };
-    WeekComponent.prototype.ngAfterViewInit = function () {
-        this.scroller.nativeElement.scrollTop = this.scroller.nativeElement.scrollTop + 1400;
-    };
-    WeekComponent.prototype.ngOnDestroy = function () {
-        this.pubNub.unSubscribe(true);
-    };
-    WeekComponent.prototype.createAppointment = function (event) {
-        var _this = this;
-        var dialogRef = this.dialog.open(__WEBPACK_IMPORTED_MODULE_3__dialog_dialog_component__["a" /* DialogComponent */], this.util.dialogConfig(Object.assign({}, event)));
-        dialogRef.afterClosed().subscribe(function (result) {
-            var appointment = dialogRef.componentInstance.currentEvent;
-            if (dialogRef.componentInstance.appointment.valid) {
-                _this.pubNub.publish(appointment);
-            }
-        });
-    };
-    WeekComponent.prototype.updateAppointments = function (day, appointment, update) {
-        if (update === void 0) { update = false; }
-        switch (day) {
-            case __WEBPACK_IMPORTED_MODULE_7__day_day__["b" /* Day */].MON:
-                if (update) {
-                    var i = this.util.findIndex(this.day.monday, appointment.id);
-                    this.day.monday[i] = appointment;
-                }
-                else {
-                    console.log(appointment);
-                    console.log(__WEBPACK_IMPORTED_MODULE_2_lodash__["values"](__WEBPACK_IMPORTED_MODULE_2_lodash__["groupBy"](appointment, 'startTime')));
-                    var a = __WEBPACK_IMPORTED_MODULE_2_lodash__["values"](__WEBPACK_IMPORTED_MODULE_2_lodash__["groupBy"](appointment, 'startTime'));
-                    this.day.monday = appointment;
-                }
-                break;
-            case __WEBPACK_IMPORTED_MODULE_7__day_day__["b" /* Day */].TUE:
-                if (update) {
-                    var i = this.util.findIndex(this.day.tuesday, appointment.id);
-                    this.day.tuesday[i] = appointment;
-                }
-                else
-                    this.day.tuesday = appointment;
-                break;
-            case __WEBPACK_IMPORTED_MODULE_7__day_day__["b" /* Day */].WED:
-                if (update) {
-                    var i = this.util.findIndex(this.day.wednesday, appointment.id);
-                    this.day.wednesday[i] = appointment;
-                }
-                else
-                    this.day.wednesday = appointment;
-                break;
-            case __WEBPACK_IMPORTED_MODULE_7__day_day__["b" /* Day */].THU:
-                if (update) {
-                    var i = this.util.findIndex(this.day.thursday, appointment.id);
-                    this.day.thursday[i] = appointment;
-                }
-                else
-                    this.day.thursday = appointment;
-                break;
-            case __WEBPACK_IMPORTED_MODULE_7__day_day__["b" /* Day */].FRI:
-                if (update) {
-                    var i = this.util.findIndex(this.day.friday, appointment.id);
-                    this.day.friday[i] = appointment;
-                }
-                else
-                    this.day.friday = appointment;
-                break;
-            case __WEBPACK_IMPORTED_MODULE_7__day_day__["b" /* Day */].SAT:
-                if (update) {
-                    var i = this.util.findIndex(this.day.saturday, appointment.id);
-                    this.day.saturday[i] = appointment;
-                }
-                else
-                    this.day.saturday = appointment;
-                break;
-            case __WEBPACK_IMPORTED_MODULE_7__day_day__["b" /* Day */].SUN:
-                if (update) {
-                    var i = this.util.findIndex(this.day.sunday, appointment.id);
-                    this.day.sunday[i] = appointment;
-                }
-                else
-                    this.day.sunday = appointment;
-                break;
-        }
-    };
-    WeekComponent.prototype.init = function () {
-        var _this = this;
-        var appointmentsByDate = this.util.groupByDate(this.appointments);
-        __WEBPACK_IMPORTED_MODULE_2_lodash__["forEach"](appointmentsByDate, function (appointment) {
-            var tempAppointment = __WEBPACK_IMPORTED_MODULE_2_lodash__["first"](appointment);
-            _this.updateAppointments(parseInt(tempAppointment.day), appointment);
-        });
-    };
-    return WeekComponent;
-}());
-__decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["e" /* ViewChild */])('body'),
-    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["f" /* ElementRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["f" /* ElementRef */]) === "function" && _a || Object)
-], WeekComponent.prototype, "scroller", void 0);
-WeekComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["g" /* Component */])({
-        selector: 'app-week',
-        template: __webpack_require__(636),
-        styles: [__webpack_require__(632)],
-        providers: [__WEBPACK_IMPORTED_MODULE_5__shared_services_pubnub_service__["a" /* PubnubService */], __WEBPACK_IMPORTED_MODULE_4__appointment_appointment_service__["a" /* AppointmentService */], __WEBPACK_IMPORTED_MODULE_6__shared_util_service__["a" /* UtilService */]]
-    }),
-    __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_material__["a" /* MdDialog */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_material__["a" /* MdDialog */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_8__shared_services_rest_api__["a" /* RestApi */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_8__shared_services_rest_api__["a" /* RestApi */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_5__shared_services_pubnub_service__["a" /* PubnubService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__shared_services_pubnub_service__["a" /* PubnubService */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_6__shared_util_service__["a" /* UtilService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__shared_util_service__["a" /* UtilService */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_4__appointment_appointment_service__["a" /* AppointmentService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__appointment_appointment_service__["a" /* AppointmentService */]) === "function" && _f || Object])
-], WeekComponent);
-
-var _a, _b, _c, _d, _e, _f;
-//# sourceMappingURL=week.component.js.map
-
-/***/ }),
-/* 509 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, module) {var __WEBPACK_AMD_DEFINE_RESULT__;/**
@@ -21948,10 +21786,10 @@ var _a, _b, _c, _d, _e, _f;
   }
 }.call(this));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(46), __webpack_require__(625)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(46), __webpack_require__(624)(module)))
 
 /***/ }),
-/* 510 */
+/* 509 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -22029,7 +21867,7 @@ return af;
 
 
 /***/ }),
-/* 511 */
+/* 510 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -22093,7 +21931,7 @@ return arDz;
 
 
 /***/ }),
-/* 512 */
+/* 511 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -22157,7 +21995,7 @@ return arKw;
 
 
 /***/ }),
-/* 513 */
+/* 512 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -22288,7 +22126,7 @@ return arLy;
 
 
 /***/ }),
-/* 514 */
+/* 513 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -22353,7 +22191,7 @@ return arMa;
 
 
 /***/ }),
-/* 515 */
+/* 514 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -22463,7 +22301,7 @@ return arSa;
 
 
 /***/ }),
-/* 516 */
+/* 515 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -22527,7 +22365,7 @@ return arTn;
 
 
 /***/ }),
-/* 517 */
+/* 516 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -22674,7 +22512,7 @@ return ar;
 
 
 /***/ }),
-/* 518 */
+/* 517 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -22784,7 +22622,7 @@ return az;
 
 
 /***/ }),
-/* 519 */
+/* 518 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -22923,7 +22761,7 @@ return be;
 
 
 /***/ }),
-/* 520 */
+/* 519 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -23018,7 +22856,7 @@ return bg;
 
 
 /***/ }),
-/* 521 */
+/* 520 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -23142,7 +22980,7 @@ return bn;
 
 
 /***/ }),
-/* 522 */
+/* 521 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -23266,7 +23104,7 @@ return bo;
 
 
 /***/ }),
-/* 523 */
+/* 522 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -23379,7 +23217,7 @@ return br;
 
 
 /***/ }),
-/* 524 */
+/* 523 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -23527,7 +23365,7 @@ return bs;
 
 
 /***/ }),
-/* 525 */
+/* 524 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -23620,7 +23458,7 @@ return ca;
 
 
 /***/ }),
-/* 526 */
+/* 525 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -23797,7 +23635,7 @@ return cs;
 
 
 /***/ }),
-/* 527 */
+/* 526 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -23865,7 +23703,7 @@ return cv;
 
 
 /***/ }),
-/* 528 */
+/* 527 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -23951,7 +23789,7 @@ return cy;
 
 
 /***/ }),
-/* 529 */
+/* 528 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -24016,7 +23854,7 @@ return da;
 
 
 /***/ }),
-/* 530 */
+/* 529 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -24100,7 +23938,7 @@ return deAt;
 
 
 /***/ }),
-/* 531 */
+/* 530 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -24183,7 +24021,7 @@ return deCh;
 
 
 /***/ }),
-/* 532 */
+/* 531 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -24266,7 +24104,7 @@ return de;
 
 
 /***/ }),
-/* 533 */
+/* 532 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -24371,7 +24209,7 @@ return dv;
 
 
 /***/ }),
-/* 534 */
+/* 533 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -24476,7 +24314,7 @@ return el;
 
 
 /***/ }),
-/* 535 */
+/* 534 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -24548,7 +24386,7 @@ return enAu;
 
 
 /***/ }),
-/* 536 */
+/* 535 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -24616,7 +24454,7 @@ return enCa;
 
 
 /***/ }),
-/* 537 */
+/* 536 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -24688,7 +24526,7 @@ return enGb;
 
 
 /***/ }),
-/* 538 */
+/* 537 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -24760,7 +24598,7 @@ return enIe;
 
 
 /***/ }),
-/* 539 */
+/* 538 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -24832,7 +24670,7 @@ return enNz;
 
 
 /***/ }),
-/* 540 */
+/* 539 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -24910,7 +24748,7 @@ return eo;
 
 
 /***/ }),
-/* 541 */
+/* 540 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -24997,7 +24835,7 @@ return esDo;
 
 
 /***/ }),
-/* 542 */
+/* 541 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -25085,7 +24923,7 @@ return es;
 
 
 /***/ }),
-/* 543 */
+/* 542 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -25170,7 +25008,7 @@ return et;
 
 
 /***/ }),
-/* 544 */
+/* 543 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -25241,7 +25079,7 @@ return eu;
 
 
 /***/ }),
-/* 545 */
+/* 544 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -25353,7 +25191,7 @@ return fa;
 
 
 /***/ }),
-/* 546 */
+/* 545 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -25465,7 +25303,7 @@ return fi;
 
 
 /***/ }),
-/* 547 */
+/* 546 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -25530,7 +25368,7 @@ return fo;
 
 
 /***/ }),
-/* 548 */
+/* 547 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -25609,7 +25447,7 @@ return frCa;
 
 
 /***/ }),
-/* 549 */
+/* 548 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -25692,7 +25530,7 @@ return frCh;
 
 
 /***/ }),
-/* 550 */
+/* 549 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -25780,7 +25618,7 @@ return fr;
 
 
 /***/ }),
-/* 551 */
+/* 550 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -25860,7 +25698,7 @@ return fy;
 
 
 /***/ }),
-/* 552 */
+/* 551 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -25941,7 +25779,7 @@ return gd;
 
 
 /***/ }),
-/* 553 */
+/* 552 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -26023,7 +25861,7 @@ return gl;
 
 
 /***/ }),
-/* 554 */
+/* 553 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -26150,7 +25988,7 @@ return gomLatn;
 
 
 /***/ }),
-/* 555 */
+/* 554 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -26254,7 +26092,7 @@ return he;
 
 
 /***/ }),
-/* 556 */
+/* 555 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -26383,7 +26221,7 @@ return hi;
 
 
 /***/ }),
-/* 557 */
+/* 556 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -26533,7 +26371,7 @@ return hr;
 
 
 /***/ }),
-/* 558 */
+/* 557 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -26647,7 +26485,7 @@ return hu;
 
 
 /***/ }),
-/* 559 */
+/* 558 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -26747,7 +26585,7 @@ return hyAm;
 
 
 /***/ }),
-/* 560 */
+/* 559 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -26835,7 +26673,7 @@ return id;
 
 
 /***/ }),
-/* 561 */
+/* 560 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -26967,7 +26805,7 @@ return is;
 
 
 /***/ }),
-/* 562 */
+/* 561 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -27042,7 +26880,7 @@ return it;
 
 
 /***/ }),
-/* 563 */
+/* 562 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -27127,7 +26965,7 @@ return ja;
 
 
 /***/ }),
-/* 564 */
+/* 563 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -27215,7 +27053,7 @@ return jv;
 
 
 /***/ }),
-/* 565 */
+/* 564 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -27309,7 +27147,7 @@ return ka;
 
 
 /***/ }),
-/* 566 */
+/* 565 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -27401,7 +27239,7 @@ return kk;
 
 
 /***/ }),
-/* 567 */
+/* 566 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -27464,7 +27302,7 @@ return km;
 
 
 /***/ }),
-/* 568 */
+/* 567 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -27595,7 +27433,7 @@ return kn;
 
 
 /***/ }),
-/* 569 */
+/* 568 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -27669,7 +27507,7 @@ return ko;
 
 
 /***/ }),
-/* 570 */
+/* 569 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -27762,7 +27600,7 @@ return ky;
 
 
 /***/ }),
-/* 571 */
+/* 570 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -27904,7 +27742,7 @@ return lb;
 
 
 /***/ }),
-/* 572 */
+/* 571 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -27979,7 +27817,7 @@ return lo;
 
 
 /***/ }),
-/* 573 */
+/* 572 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -28101,7 +27939,7 @@ return lt;
 
 
 /***/ }),
-/* 574 */
+/* 573 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -28203,7 +28041,7 @@ return lv;
 
 
 /***/ }),
-/* 575 */
+/* 574 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -28319,7 +28157,7 @@ return me;
 
 
 /***/ }),
-/* 576 */
+/* 575 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -28388,7 +28226,7 @@ return mi;
 
 
 /***/ }),
-/* 577 */
+/* 576 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -28483,7 +28321,7 @@ return mk;
 
 
 /***/ }),
-/* 578 */
+/* 577 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -28569,7 +28407,7 @@ return ml;
 
 
 /***/ }),
-/* 579 */
+/* 578 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -28733,7 +28571,7 @@ return mr;
 
 
 /***/ }),
-/* 580 */
+/* 579 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -28821,7 +28659,7 @@ return msMy;
 
 
 /***/ }),
-/* 581 */
+/* 580 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -28908,7 +28746,7 @@ return ms;
 
 
 /***/ }),
-/* 582 */
+/* 581 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -29009,7 +28847,7 @@ return my;
 
 
 /***/ }),
-/* 583 */
+/* 582 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -29077,7 +28915,7 @@ return nb;
 
 
 /***/ }),
-/* 584 */
+/* 583 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -29205,7 +29043,7 @@ return ne;
 
 
 /***/ }),
-/* 585 */
+/* 584 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -29298,7 +29136,7 @@ return nlBe;
 
 
 /***/ }),
-/* 586 */
+/* 585 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -29391,7 +29229,7 @@ return nl;
 
 
 /***/ }),
-/* 587 */
+/* 586 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -29456,7 +29294,7 @@ return nn;
 
 
 /***/ }),
-/* 588 */
+/* 587 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -29585,7 +29423,7 @@ return paIn;
 
 
 /***/ }),
-/* 589 */
+/* 588 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -29697,7 +29535,7 @@ return pl;
 
 
 /***/ }),
-/* 590 */
+/* 589 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -29763,7 +29601,7 @@ return ptBr;
 
 
 /***/ }),
-/* 591 */
+/* 590 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -29833,7 +29671,7 @@ return pt;
 
 
 /***/ }),
-/* 592 */
+/* 591 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -29913,7 +29751,7 @@ return ro;
 
 
 /***/ }),
-/* 593 */
+/* 592 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -30101,7 +29939,7 @@ return ru;
 
 
 /***/ }),
-/* 594 */
+/* 593 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -30204,7 +30042,7 @@ return sd;
 
 
 /***/ }),
-/* 595 */
+/* 594 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -30270,7 +30108,7 @@ return se;
 
 
 /***/ }),
-/* 596 */
+/* 595 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -30346,7 +30184,7 @@ return si;
 
 
 /***/ }),
-/* 597 */
+/* 596 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -30501,7 +30339,7 @@ return sk;
 
 
 /***/ }),
-/* 598 */
+/* 597 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -30668,7 +30506,7 @@ return sl;
 
 
 /***/ }),
-/* 599 */
+/* 598 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -30743,7 +30581,7 @@ return sq;
 
 
 /***/ }),
-/* 600 */
+/* 599 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -30858,7 +30696,7 @@ return srCyrl;
 
 
 /***/ }),
-/* 601 */
+/* 600 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -30973,7 +30811,7 @@ return sr;
 
 
 /***/ }),
-/* 602 */
+/* 601 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -31067,7 +30905,7 @@ return ss;
 
 
 /***/ }),
-/* 603 */
+/* 602 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -31141,7 +30979,7 @@ return sv;
 
 
 /***/ }),
-/* 604 */
+/* 603 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -31205,7 +31043,7 @@ return sw;
 
 
 /***/ }),
-/* 605 */
+/* 604 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -31340,7 +31178,7 @@ return ta;
 
 
 /***/ }),
-/* 606 */
+/* 605 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -31434,7 +31272,7 @@ return te;
 
 
 /***/ }),
-/* 607 */
+/* 606 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -31507,7 +31345,7 @@ return tet;
 
 
 /***/ }),
-/* 608 */
+/* 607 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -31579,7 +31417,7 @@ return th;
 
 
 /***/ }),
-/* 609 */
+/* 608 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -31646,7 +31484,7 @@ return tlPh;
 
 
 /***/ }),
-/* 610 */
+/* 609 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -31771,7 +31609,7 @@ return tlh;
 
 
 /***/ }),
-/* 611 */
+/* 610 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -31866,7 +31704,7 @@ return tr;
 
 
 /***/ }),
-/* 612 */
+/* 611 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -31962,7 +31800,7 @@ return tzl;
 
 
 /***/ }),
-/* 613 */
+/* 612 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -32025,7 +31863,7 @@ return tzmLatn;
 
 
 /***/ }),
-/* 614 */
+/* 613 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -32088,7 +31926,7 @@ return tzm;
 
 
 /***/ }),
-/* 615 */
+/* 614 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -32244,7 +32082,7 @@ return uk;
 
 
 /***/ }),
-/* 616 */
+/* 615 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -32348,7 +32186,7 @@ return ur;
 
 
 /***/ }),
-/* 617 */
+/* 616 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -32411,7 +32249,7 @@ return uzLatn;
 
 
 /***/ }),
-/* 618 */
+/* 617 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -32474,7 +32312,7 @@ return uz;
 
 
 /***/ }),
-/* 619 */
+/* 618 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -32558,7 +32396,7 @@ return vi;
 
 
 /***/ }),
-/* 620 */
+/* 619 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -32631,7 +32469,7 @@ return xPseudo;
 
 
 /***/ }),
-/* 621 */
+/* 620 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -32696,7 +32534,7 @@ return yo;
 
 
 /***/ }),
-/* 622 */
+/* 621 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -32812,7 +32650,7 @@ return zhCn;
 
 
 /***/ }),
-/* 623 */
+/* 622 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -32922,7 +32760,7 @@ return zhHk;
 
 
 /***/ }),
-/* 624 */
+/* 623 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -33031,7 +32869,7 @@ return zhTw;
 
 
 /***/ }),
-/* 625 */
+/* 624 */
 /***/ (function(module, exports) {
 
 module.exports = function(module) {
@@ -33059,14 +32897,13 @@ module.exports = function(module) {
 
 
 /***/ }),
-/* 626 */
+/* 625 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(155);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__calendar_component__ = __webpack_require__(504);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__week_week_component__ = __webpack_require__(508);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CalendarRoutingModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -33077,11 +32914,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-
 var calendarRoutes = [
     { path: '', component: __WEBPACK_IMPORTED_MODULE_2__calendar_component__["a" /* CalendarComponent */] },
-    { path: 'week', component: __WEBPACK_IMPORTED_MODULE_3__week_week_component__["a" /* WeekComponent */] },
-    { path: '', redirectTo: '/week', pathMatch: 'full' },
 ];
 var CalendarRoutingModule = (function () {
     function CalendarRoutingModule() {
@@ -33098,7 +32932,7 @@ CalendarRoutingModule = __decorate([
 //# sourceMappingURL=calendar-routing.module.js.map
 
 /***/ }),
-/* 627 */
+/* 626 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -33131,12 +32965,12 @@ var Day;
 //# sourceMappingURL=day.js.map
 
 /***/ }),
-/* 628 */
+/* 627 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_lodash__ = __webpack_require__(509);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_lodash__ = __webpack_require__(508);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_lodash___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_lodash__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_moment__ = __webpack_require__(503);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_moment__);
@@ -33153,35 +32987,55 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+/**
+ * Provides common utilies such find index, appointment duration, etc.
+ *
+ * `UtilService` is available as an injectable class, with various methods.
+ */
 var UtilService = (function () {
     function UtilService() {
+        /**
+        * Returns an index of given appointment from appointments.
+        */
         this.findIndex = function (collections, id) { return __WEBPACK_IMPORTED_MODULE_1_lodash__["findIndex"](collections, { id: id }); };
+        /**
+        * Returns duration of a meeting.
+        */
         this.meetingDuration = function (start, end) { return __WEBPACK_IMPORTED_MODULE_2_moment__["duration"](__WEBPACK_IMPORTED_MODULE_2_moment__(end).diff(__WEBPACK_IMPORTED_MODULE_2_moment__(start))).asHours(); };
+        /**
+        * Return an array from x to y hous.
+        */
         this.getHours = function (n) { return Array.from(new Array(n), function (x, i) { return i; }); };
+        /**
+        * Return a number i.e. weekday of given date.
+        */
         this.weekDay = function (date) { return parseInt(__WEBPACK_IMPORTED_MODULE_2_moment__(date).format("d")); };
     }
+    /**
+    * Return dialog configuration such as size,data to be passed.
+    */
     UtilService.prototype.dialogConfig = function (event) {
-        return { data: event, height: "400px", width: '600px' };
+        return { data: event, height: "350px", width: '600px' };
     };
+    /**
+    * Return the style object that will be rendered as appointment time slots.
+    */
     UtilService.prototype.style = function (event) {
-        var hourlyHeight = 95, topPosition = 100.5;
+        var hourlyHeight = 90, topPosition = 100.5;
         var diff = this.meetingDuration(event.startTime, event.endTime);
         var hhmm = __WEBPACK_IMPORTED_MODULE_2_moment__(event.startTime).format('HH:mm').split(':');
-        var top = ((hhmm[1] == 0) ? hhmm[0] * topPosition : (hhmm[0] * topPosition) + 45) + 'px';
+        console.log(diff);
+        var top = (hhmm[1] == 0) ? (hhmm[0] * topPosition) : (hhmm[0] * topPosition) + 40;
         var height = diff * hourlyHeight;
+        if (hhmm[1] == 45) {
+            top += 35;
+        }
         var color = event.available ? '#3F51B5' : '#ff4081';
-        // let height, lineHeight;
-        // if (diff % 1 != 0) {
-        //   height = diff * hourlyHeight - 10
-        //   lineHeight = 2.5;
-        // }
-        // else {
-        //   lineHeight = 6;
-        //   height = diff * hourlyHeight;
-        // }
-        height = (height > 2415) ? 2415 : height;
-        return { 'height': height + 'px', 'top': top, 'background-color': color, 'border-color': color };
+        return { 'height': height + "px", 'top': top + "px", 'background-color': color, 'border-color': color };
     };
+    /**
+    * Return an appointment object which is grouped by date uniquely.
+    */
     UtilService.prototype.groupByDate = function (appointments) {
         var _this = this;
         __WEBPACK_IMPORTED_MODULE_1_lodash__["forEach"](appointments, function (app) {
@@ -33198,6 +33052,180 @@ UtilService = __decorate([
 ], UtilService);
 
 //# sourceMappingURL=util.service.js.map
+
+/***/ }),
+/* 628 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_material__ = __webpack_require__(153);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_lodash__ = __webpack_require__(508);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_lodash___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_lodash__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__dialog_dialog_component__ = __webpack_require__(506);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__appointment_appointment_service__ = __webpack_require__(505);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__shared_services_pubnub_service__ = __webpack_require__(629);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__shared_util_service__ = __webpack_require__(627);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__day_day__ = __webpack_require__(626);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__shared_services_rest_api__ = __webpack_require__(158);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return WeekComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+
+
+
+var ACTION = "Okay";
+var NOT_AVAIBLE = "That slot is not available. We are sorry for inconvenience!";
+var WeekComponent = (function () {
+    function WeekComponent(dialog, titleService, restApi, pubNub, util, appointment) {
+        var _this = this;
+        this.dialog = dialog;
+        this.titleService = titleService;
+        this.restApi = restApi;
+        this.pubNub = pubNub;
+        this.util = util;
+        this.appointment = appointment;
+        this.days = __WEBPACK_IMPORTED_MODULE_8__day_day__["a" /* Days */].all();
+        this.hours = this.util.getHours(24);
+        this.day = new __WEBPACK_IMPORTED_MODULE_8__day_day__["a" /* Days */]();
+        this.getStyle = function (event) { return _this.util.style(event); };
+        this.onEventClick = function (event) { return (event.available) ? _this.createAppointment(event) : _this.appointment.notifyUser(NOT_AVAIBLE, ACTION); };
+        this.titleService.setTitle('Week view | Calendar');
+        this.pubNub.init();
+        this.pubNub.subscribe();
+        this.appointment.sync().subscribe(function (appointment) {
+            var tempAppointment = appointment;
+            if (tempAppointment.message) {
+                _this.updateAppointments(tempAppointment.message.day, tempAppointment.message, true);
+            }
+        });
+    }
+    WeekComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.restApi.get('slots.json').
+            subscribe(function (appointments) {
+            _this.appointments = appointments;
+            _this.init();
+        });
+    };
+    WeekComponent.prototype.ngAfterViewInit = function () {
+        this.scroller.nativeElement.scrollTop = this.scroller.nativeElement.scrollTop + 1400;
+    };
+    WeekComponent.prototype.ngOnDestroy = function () {
+        this.pubNub.unSubscribe(true);
+    };
+    WeekComponent.prototype.createAppointment = function (event) {
+        var _this = this;
+        var dialogRef = this.dialog.open(__WEBPACK_IMPORTED_MODULE_4__dialog_dialog_component__["a" /* DialogComponent */], this.util.dialogConfig(Object.assign({}, event)));
+        dialogRef.afterClosed().subscribe(function (result) {
+            var appointment = dialogRef.componentInstance.currentEvent;
+            if (dialogRef.componentInstance.appointment.valid) {
+                _this.pubNub.publish(appointment);
+            }
+        });
+    };
+    WeekComponent.prototype.updateAppointments = function (day, appointment, update) {
+        if (update === void 0) { update = false; }
+        switch (day) {
+            case __WEBPACK_IMPORTED_MODULE_8__day_day__["b" /* Day */].MON:
+                if (update) {
+                    var i = this.util.findIndex(this.day.monday, appointment.id);
+                    this.day.monday[i] = appointment;
+                }
+                else
+                    this.day.monday = appointment;
+                break;
+            case __WEBPACK_IMPORTED_MODULE_8__day_day__["b" /* Day */].TUE:
+                if (update) {
+                    var i = this.util.findIndex(this.day.tuesday, appointment.id);
+                    this.day.tuesday[i] = appointment;
+                }
+                else
+                    this.day.tuesday = appointment;
+                break;
+            case __WEBPACK_IMPORTED_MODULE_8__day_day__["b" /* Day */].WED:
+                if (update) {
+                    var i = this.util.findIndex(this.day.wednesday, appointment.id);
+                    this.day.wednesday[i] = appointment;
+                }
+                else
+                    this.day.wednesday = appointment;
+                break;
+            case __WEBPACK_IMPORTED_MODULE_8__day_day__["b" /* Day */].THU:
+                if (update) {
+                    var i = this.util.findIndex(this.day.thursday, appointment.id);
+                    this.day.thursday[i] = appointment;
+                }
+                else
+                    this.day.thursday = appointment;
+                break;
+            case __WEBPACK_IMPORTED_MODULE_8__day_day__["b" /* Day */].FRI:
+                if (update) {
+                    var i = this.util.findIndex(this.day.friday, appointment.id);
+                    this.day.friday[i] = appointment;
+                }
+                else
+                    this.day.friday = appointment;
+                break;
+            case __WEBPACK_IMPORTED_MODULE_8__day_day__["b" /* Day */].SAT:
+                if (update) {
+                    var i = this.util.findIndex(this.day.saturday, appointment.id);
+                    this.day.saturday[i] = appointment;
+                }
+                else
+                    this.day.saturday = appointment;
+                break;
+            case __WEBPACK_IMPORTED_MODULE_8__day_day__["b" /* Day */].SUN:
+                if (update) {
+                    var i = this.util.findIndex(this.day.sunday, appointment.id);
+                    this.day.sunday[i] = appointment;
+                }
+                else
+                    this.day.sunday = appointment;
+                break;
+        }
+    };
+    WeekComponent.prototype.init = function () {
+        var _this = this;
+        var appointmentsByDate = this.util.groupByDate(this.appointments);
+        __WEBPACK_IMPORTED_MODULE_3_lodash__["forEach"](appointmentsByDate, function (appointment) {
+            var tempAppointment = __WEBPACK_IMPORTED_MODULE_3_lodash__["first"](appointment);
+            _this.updateAppointments(parseInt(tempAppointment.day), appointment);
+        });
+    };
+    return WeekComponent;
+}());
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["e" /* ViewChild */])('body'),
+    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["f" /* ElementRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["f" /* ElementRef */]) === "function" && _a || Object)
+], WeekComponent.prototype, "scroller", void 0);
+WeekComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["g" /* Component */])({
+        selector: 'app-week',
+        template: __webpack_require__(636),
+        styles: [__webpack_require__(632)],
+        providers: [__WEBPACK_IMPORTED_MODULE_6__shared_services_pubnub_service__["a" /* PubnubService */], __WEBPACK_IMPORTED_MODULE_5__appointment_appointment_service__["a" /* AppointmentService */], __WEBPACK_IMPORTED_MODULE_7__shared_util_service__["a" /* UtilService */]]
+    }),
+    __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_material__["a" /* MdDialog */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_material__["a" /* MdDialog */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__["c" /* Title */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__["c" /* Title */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_9__shared_services_rest_api__["a" /* RestApi */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_9__shared_services_rest_api__["a" /* RestApi */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_6__shared_services_pubnub_service__["a" /* PubnubService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__shared_services_pubnub_service__["a" /* PubnubService */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_7__shared_util_service__["a" /* UtilService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_7__shared_util_service__["a" /* UtilService */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_5__appointment_appointment_service__["a" /* AppointmentService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__appointment_appointment_service__["a" /* AppointmentService */]) === "function" && _g || Object])
+], WeekComponent);
+
+var _a, _b, _c, _d, _e, _f, _g;
+//# sourceMappingURL=week.component.js.map
 
 /***/ }),
 /* 629 */
@@ -33223,6 +33251,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+/**
+ * Manage pub-sub requests using `PubNub`.
+ *
+ * `PubNub` is available as an injectable class, with methods to publish and subscribe messages/channels.
+ * `PUBLISH_KEY` and `SUBSCRIBE_KEY` are required to intiate connection.
+ */
 var PubnubService = (function () {
     function PubnubService(pubNub, logger, appointment) {
         this.pubNub = pubNub;
@@ -33231,9 +33265,15 @@ var PubnubService = (function () {
         this.PUBLISH_KEY = 'pub-c-1bb756c2-8269-4d1a-aeb2-d85d90d75bab';
         this.SUBSCRIBE_KEY = 'sub-c-47c33716-7f53-11e7-a0e0-ba359f928353';
     }
+    /**
+    * Notifies a subscriber when a new message is received.
+    */
     PubnubService.prototype.notify = function (m) {
         this.appointment.update(m);
     };
+    /**
+    * Initializes new PubNub connection and sets listeners.
+    */
     PubnubService.prototype.init = function () {
         var _this = this;
         this.pubNub.init({
@@ -33241,15 +33281,13 @@ var PubnubService = (function () {
             subscribeKey: this.SUBSCRIBE_KEY,
         });
         this.pubNub.addListener({
-            presence: function (m) {
-                console.log(m);
-            },
-            message: function (m) {
-                // console.log(m);
-                _this.notify(m);
-            }
+            presence: function (m) { return _this.logger.log(m); },
+            message: function (m) { return _this.notify(m); }
         });
     };
+    /**
+    * Channel subscriptions for active user.
+    */
     PubnubService.prototype.subscribe = function (channels) {
         if (channels === void 0) { channels = ['appointment']; }
         this.pubNub.subscribe({
@@ -33258,6 +33296,9 @@ var PubnubService = (function () {
             triggerEvents: ['message', 'presence', 'status']
         });
     };
+    /**
+    * Publishes a message to all subscribers.
+    */
     PubnubService.prototype.publish = function (message, channels) {
         var _this = this;
         if (channels === void 0) { channels = ['appointment']; }
@@ -33281,6 +33322,9 @@ var PubnubService = (function () {
             _this.appointment.notifyUser(message, action);
         });
     };
+    /**
+    * Unsubscription of active connection.
+    */
     PubnubService.prototype.unSubscribe = function (all, channels) {
         if (channels === void 0) { channels = ['appointment']; }
         (all) ? this.pubNub.unsubscribeAll() : this.pubNub.unsubscribe({ channels: channels });
@@ -33321,7 +33365,7 @@ exports = module.exports = __webpack_require__(31)();
 
 
 // module
-exports.push([module.i, "md-input-container {\n  width: 100%;\n  margin: 8px auto; }\n  md-input-container input {\n    border-bottom: none;\n    height: auto;\n    margin: 0; }\n    md-input-container input:focus {\n      border-bottom: none;\n      box-shadow: none; }\n  md-input-container textarea {\n    resize: none; }\n", ""]);
+exports.push([module.i, "md-input-container {\n  width: 100%; }\n\n.mat-dialog-actions {\n  float: right; }\n", ""]);
 
 // exports
 
@@ -33338,7 +33382,7 @@ exports = module.exports = __webpack_require__(31)();
 
 
 // module
-exports.push([module.i, ".week .header {\n  height: 60px;\n  width: 95.5%;\n  padding-left: 55px;\n  background-color: #EAEAEA; }\n  .week .header .day {\n    display: inline-block;\n    width: 14%;\n    height: 100%;\n    line-height: 60px;\n    text-align: center;\n    color: #686868; }\n\n.week .body {\n  padding-right: 10px;\n  max-height: 600px;\n  overflow-y: auto;\n  position: relative; }\n  .week .body .time-strip {\n    float: left;\n    height: 100%;\n    padding-top: 15px;\n    text-align: center;\n    color: #686868;\n    width: 80px; }\n    .week .body .time-strip .hour {\n      border-bottom: 2px solid #FFF;\n      min-height: 60px;\n      max-height: 60px;\n      padding: 19px;\n      line-height: 50px; }\n  .week .body .schedules .appointment {\n    display: inline-block;\n    width: 160px;\n    height: 100%;\n    padding-top: 15px;\n    text-align: center;\n    color: #686868; }\n    .week .body .schedules .appointment .hourly {\n      border-bottom: 2px solid #DEDEDE;\n      min-height: 60px;\n      max-height: 60px;\n      padding: 19px;\n      line-height: 50px;\n      transition: all 0.2s ease-in; }\n      .week .body .schedules .appointment .hourly:hover {\n        background-color: #dedede;\n        cursor: pointer; }\n  .week .body .apps-skeleton {\n    position: absolute;\n    top: 0; }\n    .week .body .apps-skeleton td {\n      width: 154px; }\n    .week .body .apps-skeleton .event-container {\n      position: relative; }\n      .week .body .apps-skeleton .event-container .event {\n        border: 1px solid #3F51B5;\n        background-color: #3F51B5;\n        width: 99%;\n        border-radius: 4px;\n        cursor: pointer;\n        position: absolute;\n        text-align: center; }\n        .week .body .apps-skeleton .event-container .event span {\n          color: #FFF;\n          font-size: 14px; }\n      .week .body .apps-skeleton .event-container .inline {\n        display: inline-block;\n        width: 47%;\n        background-color: #9A2D6A; }\n      .week .body .apps-skeleton .event-container .left {\n        left: 50%; }\n", ""]);
+exports.push([module.i, ".week .header {\n  height: 60px;\n  width: 95.5%;\n  padding-left: 55px;\n  background-color: #EAEAEA; }\n  .week .header .day {\n    display: inline-block;\n    width: 14%;\n    height: 100%;\n    line-height: 60px;\n    text-align: center;\n    color: #686868; }\n\n.week .body {\n  padding-right: 10px;\n  max-height: 600px;\n  overflow-y: auto;\n  position: relative; }\n  .week .body .time-strip {\n    float: left;\n    height: 100%;\n    padding-top: 15px;\n    text-align: center;\n    color: #686868;\n    width: 80px; }\n    .week .body .time-strip .hour {\n      border-bottom: 2px solid #FFF;\n      min-height: 60px;\n      max-height: 60px;\n      padding: 19px;\n      line-height: 50px; }\n  .week .body .schedules .appointment {\n    display: inline-block;\n    width: 160px;\n    height: 100%;\n    padding-top: 15px;\n    text-align: center;\n    color: #686868; }\n    .week .body .schedules .appointment .hourly {\n      border-bottom: 2px solid #DEDEDE;\n      min-height: 60px;\n      max-height: 60px;\n      padding: 19px;\n      line-height: 50px;\n      transition: all 0.2s ease-in; }\n      .week .body .schedules .appointment .hourly:hover {\n        background-color: #DEDEDE;\n        cursor: pointer; }\n  .week .body .events-skeleton {\n    position: absolute;\n    top: 0; }\n    .week .body .events-skeleton td {\n      width: 154px; }\n    .week .body .events-skeleton .event-container {\n      position: relative; }\n      .week .body .events-skeleton .event-container .event {\n        border: 1px solid #3F51B5;\n        background-color: #3F51B5;\n        width: 99%;\n        border-radius: 4px;\n        cursor: pointer;\n        position: absolute;\n        text-align: center;\n        color: #FFF;\n        padding-top: 5px;\n        transition: all 0.2s ease-in; }\n        .week .body .events-skeleton .event-container .event span {\n          font-size: 14px; }\n        .week .body .events-skeleton .event-container .event .material-icons {\n          font-size: 18px;\n          position: absolute;\n          left: 10px; }\n        .week .body .events-skeleton .event-container .event:hover {\n          -webkit-transform: scale(1.2);\n                  transform: scale(1.2);\n          z-index: 999;\n          box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12); }\n          .week .body .events-skeleton .event-container .event:hover span {\n            font-size: 16px; }\n          .week .body .events-skeleton .event-container .event:hover .material-icons {\n            font-size: 19px;\n            position: absolute;\n            left: 3px; }\n", ""]);
 
 // exports
 
@@ -33351,236 +33395,236 @@ module.exports = module.exports.toString();
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
-	"./af": 510,
-	"./af.js": 510,
-	"./ar": 517,
-	"./ar-dz": 511,
-	"./ar-dz.js": 511,
-	"./ar-kw": 512,
-	"./ar-kw.js": 512,
-	"./ar-ly": 513,
-	"./ar-ly.js": 513,
-	"./ar-ma": 514,
-	"./ar-ma.js": 514,
-	"./ar-sa": 515,
-	"./ar-sa.js": 515,
-	"./ar-tn": 516,
-	"./ar-tn.js": 516,
-	"./ar.js": 517,
-	"./az": 518,
-	"./az.js": 518,
-	"./be": 519,
-	"./be.js": 519,
-	"./bg": 520,
-	"./bg.js": 520,
-	"./bn": 521,
-	"./bn.js": 521,
-	"./bo": 522,
-	"./bo.js": 522,
-	"./br": 523,
-	"./br.js": 523,
-	"./bs": 524,
-	"./bs.js": 524,
-	"./ca": 525,
-	"./ca.js": 525,
-	"./cs": 526,
-	"./cs.js": 526,
-	"./cv": 527,
-	"./cv.js": 527,
-	"./cy": 528,
-	"./cy.js": 528,
-	"./da": 529,
-	"./da.js": 529,
-	"./de": 532,
-	"./de-at": 530,
-	"./de-at.js": 530,
-	"./de-ch": 531,
-	"./de-ch.js": 531,
-	"./de.js": 532,
-	"./dv": 533,
-	"./dv.js": 533,
-	"./el": 534,
-	"./el.js": 534,
-	"./en-au": 535,
-	"./en-au.js": 535,
-	"./en-ca": 536,
-	"./en-ca.js": 536,
-	"./en-gb": 537,
-	"./en-gb.js": 537,
-	"./en-ie": 538,
-	"./en-ie.js": 538,
-	"./en-nz": 539,
-	"./en-nz.js": 539,
-	"./eo": 540,
-	"./eo.js": 540,
-	"./es": 542,
-	"./es-do": 541,
-	"./es-do.js": 541,
-	"./es.js": 542,
-	"./et": 543,
-	"./et.js": 543,
-	"./eu": 544,
-	"./eu.js": 544,
-	"./fa": 545,
-	"./fa.js": 545,
-	"./fi": 546,
-	"./fi.js": 546,
-	"./fo": 547,
-	"./fo.js": 547,
-	"./fr": 550,
-	"./fr-ca": 548,
-	"./fr-ca.js": 548,
-	"./fr-ch": 549,
-	"./fr-ch.js": 549,
-	"./fr.js": 550,
-	"./fy": 551,
-	"./fy.js": 551,
-	"./gd": 552,
-	"./gd.js": 552,
-	"./gl": 553,
-	"./gl.js": 553,
-	"./gom-latn": 554,
-	"./gom-latn.js": 554,
-	"./he": 555,
-	"./he.js": 555,
-	"./hi": 556,
-	"./hi.js": 556,
-	"./hr": 557,
-	"./hr.js": 557,
-	"./hu": 558,
-	"./hu.js": 558,
-	"./hy-am": 559,
-	"./hy-am.js": 559,
-	"./id": 560,
-	"./id.js": 560,
-	"./is": 561,
-	"./is.js": 561,
-	"./it": 562,
-	"./it.js": 562,
-	"./ja": 563,
-	"./ja.js": 563,
-	"./jv": 564,
-	"./jv.js": 564,
-	"./ka": 565,
-	"./ka.js": 565,
-	"./kk": 566,
-	"./kk.js": 566,
-	"./km": 567,
-	"./km.js": 567,
-	"./kn": 568,
-	"./kn.js": 568,
-	"./ko": 569,
-	"./ko.js": 569,
-	"./ky": 570,
-	"./ky.js": 570,
-	"./lb": 571,
-	"./lb.js": 571,
-	"./lo": 572,
-	"./lo.js": 572,
-	"./lt": 573,
-	"./lt.js": 573,
-	"./lv": 574,
-	"./lv.js": 574,
-	"./me": 575,
-	"./me.js": 575,
-	"./mi": 576,
-	"./mi.js": 576,
-	"./mk": 577,
-	"./mk.js": 577,
-	"./ml": 578,
-	"./ml.js": 578,
-	"./mr": 579,
-	"./mr.js": 579,
-	"./ms": 581,
-	"./ms-my": 580,
-	"./ms-my.js": 580,
-	"./ms.js": 581,
-	"./my": 582,
-	"./my.js": 582,
-	"./nb": 583,
-	"./nb.js": 583,
-	"./ne": 584,
-	"./ne.js": 584,
-	"./nl": 586,
-	"./nl-be": 585,
-	"./nl-be.js": 585,
-	"./nl.js": 586,
-	"./nn": 587,
-	"./nn.js": 587,
-	"./pa-in": 588,
-	"./pa-in.js": 588,
-	"./pl": 589,
-	"./pl.js": 589,
-	"./pt": 591,
-	"./pt-br": 590,
-	"./pt-br.js": 590,
-	"./pt.js": 591,
-	"./ro": 592,
-	"./ro.js": 592,
-	"./ru": 593,
-	"./ru.js": 593,
-	"./sd": 594,
-	"./sd.js": 594,
-	"./se": 595,
-	"./se.js": 595,
-	"./si": 596,
-	"./si.js": 596,
-	"./sk": 597,
-	"./sk.js": 597,
-	"./sl": 598,
-	"./sl.js": 598,
-	"./sq": 599,
-	"./sq.js": 599,
-	"./sr": 601,
-	"./sr-cyrl": 600,
-	"./sr-cyrl.js": 600,
-	"./sr.js": 601,
-	"./ss": 602,
-	"./ss.js": 602,
-	"./sv": 603,
-	"./sv.js": 603,
-	"./sw": 604,
-	"./sw.js": 604,
-	"./ta": 605,
-	"./ta.js": 605,
-	"./te": 606,
-	"./te.js": 606,
-	"./tet": 607,
-	"./tet.js": 607,
-	"./th": 608,
-	"./th.js": 608,
-	"./tl-ph": 609,
-	"./tl-ph.js": 609,
-	"./tlh": 610,
-	"./tlh.js": 610,
-	"./tr": 611,
-	"./tr.js": 611,
-	"./tzl": 612,
-	"./tzl.js": 612,
-	"./tzm": 614,
-	"./tzm-latn": 613,
-	"./tzm-latn.js": 613,
-	"./tzm.js": 614,
-	"./uk": 615,
-	"./uk.js": 615,
-	"./ur": 616,
-	"./ur.js": 616,
-	"./uz": 618,
-	"./uz-latn": 617,
-	"./uz-latn.js": 617,
-	"./uz.js": 618,
-	"./vi": 619,
-	"./vi.js": 619,
-	"./x-pseudo": 620,
-	"./x-pseudo.js": 620,
-	"./yo": 621,
-	"./yo.js": 621,
-	"./zh-cn": 622,
-	"./zh-cn.js": 622,
-	"./zh-hk": 623,
-	"./zh-hk.js": 623,
-	"./zh-tw": 624,
-	"./zh-tw.js": 624
+	"./af": 509,
+	"./af.js": 509,
+	"./ar": 516,
+	"./ar-dz": 510,
+	"./ar-dz.js": 510,
+	"./ar-kw": 511,
+	"./ar-kw.js": 511,
+	"./ar-ly": 512,
+	"./ar-ly.js": 512,
+	"./ar-ma": 513,
+	"./ar-ma.js": 513,
+	"./ar-sa": 514,
+	"./ar-sa.js": 514,
+	"./ar-tn": 515,
+	"./ar-tn.js": 515,
+	"./ar.js": 516,
+	"./az": 517,
+	"./az.js": 517,
+	"./be": 518,
+	"./be.js": 518,
+	"./bg": 519,
+	"./bg.js": 519,
+	"./bn": 520,
+	"./bn.js": 520,
+	"./bo": 521,
+	"./bo.js": 521,
+	"./br": 522,
+	"./br.js": 522,
+	"./bs": 523,
+	"./bs.js": 523,
+	"./ca": 524,
+	"./ca.js": 524,
+	"./cs": 525,
+	"./cs.js": 525,
+	"./cv": 526,
+	"./cv.js": 526,
+	"./cy": 527,
+	"./cy.js": 527,
+	"./da": 528,
+	"./da.js": 528,
+	"./de": 531,
+	"./de-at": 529,
+	"./de-at.js": 529,
+	"./de-ch": 530,
+	"./de-ch.js": 530,
+	"./de.js": 531,
+	"./dv": 532,
+	"./dv.js": 532,
+	"./el": 533,
+	"./el.js": 533,
+	"./en-au": 534,
+	"./en-au.js": 534,
+	"./en-ca": 535,
+	"./en-ca.js": 535,
+	"./en-gb": 536,
+	"./en-gb.js": 536,
+	"./en-ie": 537,
+	"./en-ie.js": 537,
+	"./en-nz": 538,
+	"./en-nz.js": 538,
+	"./eo": 539,
+	"./eo.js": 539,
+	"./es": 541,
+	"./es-do": 540,
+	"./es-do.js": 540,
+	"./es.js": 541,
+	"./et": 542,
+	"./et.js": 542,
+	"./eu": 543,
+	"./eu.js": 543,
+	"./fa": 544,
+	"./fa.js": 544,
+	"./fi": 545,
+	"./fi.js": 545,
+	"./fo": 546,
+	"./fo.js": 546,
+	"./fr": 549,
+	"./fr-ca": 547,
+	"./fr-ca.js": 547,
+	"./fr-ch": 548,
+	"./fr-ch.js": 548,
+	"./fr.js": 549,
+	"./fy": 550,
+	"./fy.js": 550,
+	"./gd": 551,
+	"./gd.js": 551,
+	"./gl": 552,
+	"./gl.js": 552,
+	"./gom-latn": 553,
+	"./gom-latn.js": 553,
+	"./he": 554,
+	"./he.js": 554,
+	"./hi": 555,
+	"./hi.js": 555,
+	"./hr": 556,
+	"./hr.js": 556,
+	"./hu": 557,
+	"./hu.js": 557,
+	"./hy-am": 558,
+	"./hy-am.js": 558,
+	"./id": 559,
+	"./id.js": 559,
+	"./is": 560,
+	"./is.js": 560,
+	"./it": 561,
+	"./it.js": 561,
+	"./ja": 562,
+	"./ja.js": 562,
+	"./jv": 563,
+	"./jv.js": 563,
+	"./ka": 564,
+	"./ka.js": 564,
+	"./kk": 565,
+	"./kk.js": 565,
+	"./km": 566,
+	"./km.js": 566,
+	"./kn": 567,
+	"./kn.js": 567,
+	"./ko": 568,
+	"./ko.js": 568,
+	"./ky": 569,
+	"./ky.js": 569,
+	"./lb": 570,
+	"./lb.js": 570,
+	"./lo": 571,
+	"./lo.js": 571,
+	"./lt": 572,
+	"./lt.js": 572,
+	"./lv": 573,
+	"./lv.js": 573,
+	"./me": 574,
+	"./me.js": 574,
+	"./mi": 575,
+	"./mi.js": 575,
+	"./mk": 576,
+	"./mk.js": 576,
+	"./ml": 577,
+	"./ml.js": 577,
+	"./mr": 578,
+	"./mr.js": 578,
+	"./ms": 580,
+	"./ms-my": 579,
+	"./ms-my.js": 579,
+	"./ms.js": 580,
+	"./my": 581,
+	"./my.js": 581,
+	"./nb": 582,
+	"./nb.js": 582,
+	"./ne": 583,
+	"./ne.js": 583,
+	"./nl": 585,
+	"./nl-be": 584,
+	"./nl-be.js": 584,
+	"./nl.js": 585,
+	"./nn": 586,
+	"./nn.js": 586,
+	"./pa-in": 587,
+	"./pa-in.js": 587,
+	"./pl": 588,
+	"./pl.js": 588,
+	"./pt": 590,
+	"./pt-br": 589,
+	"./pt-br.js": 589,
+	"./pt.js": 590,
+	"./ro": 591,
+	"./ro.js": 591,
+	"./ru": 592,
+	"./ru.js": 592,
+	"./sd": 593,
+	"./sd.js": 593,
+	"./se": 594,
+	"./se.js": 594,
+	"./si": 595,
+	"./si.js": 595,
+	"./sk": 596,
+	"./sk.js": 596,
+	"./sl": 597,
+	"./sl.js": 597,
+	"./sq": 598,
+	"./sq.js": 598,
+	"./sr": 600,
+	"./sr-cyrl": 599,
+	"./sr-cyrl.js": 599,
+	"./sr.js": 600,
+	"./ss": 601,
+	"./ss.js": 601,
+	"./sv": 602,
+	"./sv.js": 602,
+	"./sw": 603,
+	"./sw.js": 603,
+	"./ta": 604,
+	"./ta.js": 604,
+	"./te": 605,
+	"./te.js": 605,
+	"./tet": 606,
+	"./tet.js": 606,
+	"./th": 607,
+	"./th.js": 607,
+	"./tl-ph": 608,
+	"./tl-ph.js": 608,
+	"./tlh": 609,
+	"./tlh.js": 609,
+	"./tr": 610,
+	"./tr.js": 610,
+	"./tzl": 611,
+	"./tzl.js": 611,
+	"./tzm": 613,
+	"./tzm-latn": 612,
+	"./tzm-latn.js": 612,
+	"./tzm.js": 613,
+	"./uk": 614,
+	"./uk.js": 614,
+	"./ur": 615,
+	"./ur.js": 615,
+	"./uz": 617,
+	"./uz-latn": 616,
+	"./uz-latn.js": 616,
+	"./uz.js": 617,
+	"./vi": 618,
+	"./vi.js": 618,
+	"./x-pseudo": 619,
+	"./x-pseudo.js": 619,
+	"./yo": 620,
+	"./yo.js": 620,
+	"./zh-cn": 621,
+	"./zh-cn.js": 621,
+	"./zh-hk": 622,
+	"./zh-hk.js": 622,
+	"./zh-tw": 623,
+	"./zh-tw.js": 623
 };
 function webpackContext(req) {
 	return __webpack_require__(webpackContextResolve(req));
@@ -33609,13 +33653,13 @@ module.exports = "<div class=\"calendar mat-elevation-z6\">\n    <app-week></app
 /* 635 */
 /***/ (function(module, exports) {
 
-module.exports = "<form [formGroup]=\"appointment\" (ngSubmit)=\"onSubmit(appointment)\">\n  <h1 md-dialog-title>New Appointment</h1>\n  <div md-dialog-content>\n    <md-input-container>\n      <input type=\"text\" class=\"input\" mdInput formControlName=\"name\" placeholder=\"Full Name\">\n      <md-icon mdSuffix>account_circle</md-icon>\n      <md-error *ngIf=\"appointment.get('email').hasError('required')\">\n        Name is <strong>required</strong>\n      </md-error>\n    </md-input-container>\n    <md-input-container>\n      <input mdInput placeholder=\"Email\" formControlName=\"email\">\n      <md-icon mdSuffix>email</md-icon>\n      <!--<md-error *ngIf=\"appointment.get('email').hasError('pattern')\">\n                Please enter a valid email address\n              </md-error>-->\n      <md-error *ngIf=\"appointment.get('email').hasError('required')\">\n        Email is <strong>required</strong>\n      </md-error>\n    </md-input-container>\n    <md-input-container>\n      <span mdPrefix>+1 &nbsp;</span>\n      <input type=\"tel\" mdInput formControlName=\"mobile\" placeholder=\"Mobile\">\n      <md-icon mdSuffix>phone</md-icon>\n    </md-input-container>\n    <!-- <md-grid-list cols=\"2\" rowHeight=\"100px\">\n      <md-grid-tile>\n        <md-input-container>\n          <input type=\"datetime-local\" mdInput formControlName=\"startTime\" placeholder=\"From\">\n          \n          <md-error *ngIf=\"appointment.get('startTime').hasError('required')\">\n            Choose start <strong>timings</strong>\n          </md-error>\n        </md-input-container>\n      </md-grid-tile>\n      <md-grid-tile>\n        <md-input-container>\n          <input type=\"datetime-local\" mdInput formControlName=\"endTime\" placeholder=\"To\">\n          \n          <md-error *ngIf=\"appointment.get('endTime').hasError('required')\">\n            Choose end <strong>timings</strong>\n          </md-error>\n        </md-input-container>\n      </md-grid-tile>\n    </md-grid-list> -->\n  </div>\n  <div md-dialog-actions>\n    <button md-button md-dialog-close class=\"flat\">Cancel</button>\n    <button type=\"submit\" color=\"primary\" md-raised-button>Create</button>\n  </div>\n</form>"
+module.exports = "<form [formGroup]=\"appointment\" (ngSubmit)=\"onSubmit(appointment)\">\n  <h1 md-dialog-title>New Appointment</h1>\n  <div md-dialog-content>\n    <md-input-container>\n      <input type=\"text\" class=\"input\" mdInput formControlName=\"name\" placeholder=\"Full Name\">\n      <md-icon mdSuffix>account_circle</md-icon>\n      <md-error *ngIf=\"appointment.get('email').hasError('required')\">\n        Name is <strong>required</strong>\n      </md-error>\n    </md-input-container>\n    <md-input-container>\n      <input mdInput placeholder=\"Email\" formControlName=\"email\">\n      <md-icon mdSuffix>email</md-icon>\n      <!--<md-error *ngIf=\"appointment.get('email').hasError('pattern')\">\n                Please enter a valid email address\n              </md-error>-->\n      <md-error *ngIf=\"appointment.get('email').hasError('required')\">\n        Email is <strong>required</strong>\n      </md-error>\n    </md-input-container>\n    <md-input-container>\n      <span mdPrefix>+1 &nbsp;</span>\n      <input type=\"tel\" mdInput formControlName=\"mobile\" placeholder=\"Mobile\">\n      <md-icon mdSuffix>phone</md-icon>\n    </md-input-container>\n  </div>\n  <div md-dialog-actions>\n    <button md-button md-dialog-close class=\"flat\">Cancel</button>\n    <button type=\"submit\" color=\"primary\" md-raised-button>Create</button>\n  </div>\n</form>"
 
 /***/ }),
 /* 636 */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"week\">\n  <div class=\"header\">\n    <div class=\"day\" *ngFor=\"let day of days\">{{day}}</div>\n  </div>\n  <div class=\"body\" #body>\n    <div class=\"time-strip\">\n      <div class=\"hour\" *ngFor=\"let hour of hours\">{{hour}}</div>\n    </div>\n    <div class=\"schedules\">\n      <div class=\"appointment\" *ngFor=\"let day of days;\">\n        <div class=\"hourly\" *ngFor=\"let hour of hours\"></div>\n      </div>\n    </div>\n    <div class=\"apps-skeleton\">\n      <table>\n        <tr>\n          <td style=\"width: 80px;\">\n          </td>\n          <td>\n            <div class=\"event-container\">\n              <div *ngFor=\"let event of day.monday\">\n                <div (click)=\"onEventClick(event)\" class=\"event mat-elevation-z2\" [ngStyle]=\"getStyle(event)\">\n                  <span>{{event.startTime | date:'HH:mm'}} to {{event.endTime | date:'HH:mm'}}</span>\n                </div>\n              </div>\n              <!-- <div class=\"event mat-elevation-z2\" [ngStyle]=\"{'height': getHeight(500, 700),'top':getHeight(300, 600)}\"></div> -->\n            </div>\n          </td>\n          <td>\n            <div class=\"event-container\">\n              <div *ngFor=\"let event of day.tuesday\">\n                <div (click)=\"onEventClick(event)\" class=\"event mat-elevation-z2\" [ngStyle]=\"getStyle(event)\">\n                  <span>{{event.startTime | date:'HH:mm'}} to {{event.endTime | date:'HH:mm'}}</span>\n                </div>\n              </div>\n              <!-- <div class=\"event mat-elevation-z2\" [ngStyle]=\"{'height': getHeight(500, 700),'top':getHeight(300, 600)}\"></div> -->\n            </div>\n          </td>\n          <td>\n            <div class=\"event-container\">\n              <div *ngFor=\"let event of day.wednesday\">\n                <div (click)=\"onEventClick(event)\" class=\"event mat-elevation-z2\" [ngStyle]=\"getStyle(event)\">\n                  <span>{{event.startTime | date:'HH:mm'}} to {{event.endTime | date:'HH:mm'}}</span>\n                </div>\n              </div>\n              <!-- <div class=\"event mat-elevation-z2\" [ngStyle]=\"{'height': getHeight(500, 700),'top':getHeight(300, 600)}\"></div> -->\n            </div>\n          </td>\n          <td>\n            <div class=\"event-container\">\n              <div *ngFor=\"let event of day.thursday\">\n                <div (click)=\"onEventClick(event)\" class=\"event mat-elevation-z2\" [ngStyle]=\"getStyle(event)\">\n                  <span>{{event.startTime | date:'HH:mm'}} to {{event.endTime | date:'HH:mm'}}</span>\n                </div>\n              </div>\n              <!-- <div class=\"event mat-elevation-z2\" [ngStyle]=\"{'height': getHeight(500, 700),'top':getHeight(300, 600)}\"></div> -->\n            </div>\n          </td>\n          <td>\n            <div class=\"event-container\">\n              <div *ngFor=\"let event of day.friday\">\n                <div (click)=\"onEventClick(event)\" class=\"event mat-elevation-z2\" [ngStyle]=\"getStyle(event)\">\n                  <span>{{event.startTime | date:'HH:mm'}} to {{event.endTime | date:'HH:mm'}}</span>\n                </div>\n              </div>\n              <!-- <div class=\"event mat-elevation-z2\" [ngStyle]=\"{'height': getHeight(500, 700),'top':getHeight(300, 600)}\"></div> -->\n            </div>\n          </td>\n          <td>\n            <div class=\"event-container\">\n              <div *ngFor=\"let event of day.saturday\">\n                <div (click)=\"onEventClick(event)\" class=\"event mat-elevation-z2\" [ngStyle]=\"getStyle(event)\">\n                  <span>{{event.startTime | date:'HH:mm'}} to {{event.endTime | date:'HH:mm'}}</span>\n                </div>\n              </div>\n              <!-- <div class=\"event mat-elevation-z2\" [ngStyle]=\"{'height': getHeight(500, 700),'top':getHeight(300, 600)}\"></div> -->\n            </div>\n          </td>\n          <td>\n            <div class=\"event-container\">\n              <div *ngFor=\"let event of day.sunday\">\n                <div (click)=\"onEventClick(event)\" class=\"event mat-elevation-z2\" [ngStyle]=\"getStyle(event)\">\n                  <span>{{event.startTime | date:'HH:mm'}} to {{event.endTime | date:'HH:mm'}}</span>\n                </div>\n              </div>\n              <!-- <div class=\"event mat-elevation-z2\" [ngStyle]=\"{'height': getHeight(500, 700),'top':getHeight(300, 600)}\"></div> -->\n            </div>\n          </td>\n        </tr>\n      </table>\n    </div>\n  </div>\n</div>"
+module.exports = "<div class=\"week\">\n  <div class=\"header\">\n    <div class=\"day\" *ngFor=\"let day of days\">{{day}}</div>\n  </div>\n  <div class=\"body\" #body>\n    <div class=\"time-strip\">\n      <div class=\"hour\" *ngFor=\"let hour of hours\">{{hour}}</div>\n    </div>\n    <div class=\"schedules\">\n      <div class=\"appointment\" *ngFor=\"let day of days;\">\n        <div class=\"hourly\" *ngFor=\"let hour of hours\"></div>\n      </div>\n    </div>\n    <div class=\"events-skeleton\">\n      <table>\n        <tr>\n          <td [ngStyle]=\"{'width':'80px'}\">\n          </td>\n          <td>\n            <div class=\"event-container\">\n              <div *ngFor=\"let event of day.monday\">\n                <div (click)=\"onEventClick(event)\" class=\"event mat-elevation-z2\" [ngStyle]=\"getStyle(event)\">\n                  <md-icon>schedule</md-icon>\n                  <span>{{event.startTime | date:'HH:mm'}} to {{event.endTime | date:'HH:mm'}}</span>\n                </div>\n              </div>\n              <!-- <div class=\"event mat-elevation-z2\" [ngStyle]=\"{'height': getHeight(500, 700),'top':getHeight(300, 600)}\"></div> -->\n            </div>\n          </td>\n          <td>\n            <div class=\"event-container\">\n              <div *ngFor=\"let event of day.tuesday\">\n                <div (click)=\"onEventClick(event)\" class=\"event mat-elevation-z2\" [ngStyle]=\"getStyle(event)\">\n                  <md-icon>schedule</md-icon>\n                  <span>{{event.startTime | date:'HH:mm'}} to {{event.endTime | date:'HH:mm'}}</span>\n                </div>\n              </div>\n            </div>\n          </td>\n          <td>\n            <div class=\"event-container\">\n              <div *ngFor=\"let event of day.wednesday\">\n                <div (click)=\"onEventClick(event)\" class=\"event mat-elevation-z2\" [ngStyle]=\"getStyle(event)\">\n                  <md-icon>schedule</md-icon>\n                  <span>{{event.startTime | date:'HH:mm'}} to {{event.endTime | date:'HH:mm'}}</span>\n                </div>\n              </div>\n            </div>\n          </td>\n          <td>\n            <div class=\"event-container\">\n              <div *ngFor=\"let event of day.thursday\">\n                <div (click)=\"onEventClick(event)\" class=\"event mat-elevation-z2\" [ngStyle]=\"getStyle(event)\">\n                  <md-icon>schedule</md-icon>\n                  <span>{{event.startTime | date:'HH:mm'}} to {{event.endTime | date:'HH:mm'}}</span>\n                </div>\n              </div>\n            </div>\n          </td>\n          <td>\n            <div class=\"event-container\">\n              <div *ngFor=\"let event of day.friday\">\n                <div (click)=\"onEventClick(event)\" class=\"event mat-elevation-z2\" [ngStyle]=\"getStyle(event)\">\n                  <md-icon>schedule</md-icon>\n                  <span>{{event.startTime | date:'HH:mm'}} to {{event.endTime | date:'HH:mm'}}</span>\n                </div>\n              </div>\n            </div>\n          </td>\n          <td>\n            <div class=\"event-container\">\n              <div *ngFor=\"let event of day.saturday\">\n                <div (click)=\"onEventClick(event)\" class=\"event mat-elevation-z2\" [ngStyle]=\"getStyle(event)\">\n                  <md-icon>schedule</md-icon>\n                  <span>{{event.startTime | date:'HH:mm'}} to {{event.endTime | date:'HH:mm'}}</span>\n                </div>\n              </div>\n            </div>\n          </td>\n          <td>\n            <div class=\"event-container\">\n              <div *ngFor=\"let event of day.sunday\">\n                <div (click)=\"onEventClick(event)\" class=\"event mat-elevation-z2\" [ngStyle]=\"getStyle(event)\">\n                  <md-icon>schedule</md-icon>\n                  <span>{{event.startTime | date:'HH:mm'}} to {{event.endTime | date:'HH:mm'}}</span>\n                </div>\n              </div>\n            </div>\n          </td>\n        </tr>\n      </table>\n    </div>\n  </div>\n</div>"
 
 /***/ })
 ]));
