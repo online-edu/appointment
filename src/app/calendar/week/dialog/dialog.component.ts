@@ -19,7 +19,6 @@ export class DialogComponent implements OnInit {
     private formBuilder: FormBuilder) { }
 
   ngOnInit() {
-    console.log(this.currentEvent);
     this.appointment = this.formBuilder.group({
       name: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(30)]],
       email: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(30)]],
@@ -35,7 +34,6 @@ export class DialogComponent implements OnInit {
       this.currentEvent.available = false;
       this.dialogRef.close();
     }
-
   }
 
 }

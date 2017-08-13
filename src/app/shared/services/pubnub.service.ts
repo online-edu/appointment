@@ -3,7 +3,12 @@ import { Injectable } from '@angular/core';
 import { PubNubAngular } from "pubnub-angular2";
 import { AppointmentService } from "../../calendar/week/appointment/appointment.service";
 import { LoggerService } from "../../core/logger.service";
-
+/**
+ * Manage pub-sub requests using `PubNub`.
+ *
+ * `PubNub` is available as an injectable class, with methods to publish and subscribe messages/channels.
+ * `PUBLISH_KEY` and `SUBSCRIBE_KEY` are required to intiate connection.
+ */
 @Injectable()
 export class PubnubService {
 
@@ -12,11 +17,15 @@ export class PubnubService {
 
   constructor(private pubNub: PubNubAngular, private logger: LoggerService,
     private appointment: AppointmentService) { }
-
+  /**
+  * Notifies a subscriber when a new message is received.
+  */
   private notify(m) {
     this.appointment.update(m);
   }
-
+  /**
+  * Initializes new PubNub connection and sets listeners.
+  */
   init() {
     this.pubNub.init({
       publishKey: this.PUBLISH_KEY,
@@ -24,17 +33,14 @@ export class PubnubService {
     });
 
     this.pubNub.addListener({
-      presence: (m) => {
-        console.log(m);
-      },
-      message: (m) => {
-        // console.log(m);
-        this.notify(m);
-      }
+      presence: (m) => this.logger.log(m),
+      message: (m) => this.notify(m)
     })
 
   }
-
+  /**
+  * Channel subscriptions for active user.
+  */
   subscribe(channels: string[] = ['appointment']) {
     this.pubNub.subscribe({
       channels: channels,
@@ -42,7 +48,9 @@ export class PubnubService {
       triggerEvents: ['message', 'presence', 'status']
     });
   }
-
+  /**
+  * Publishes a message to all subscribers.
+  */
   publish(message: any, channels: string[] = ['appointment']) {
     this.pubNub.publish({
       channel: channels,
@@ -63,9 +71,10 @@ export class PubnubService {
       this.appointment.notifyUser(message, action);
     });
   }
-
+  /**
+  * Unsubscription of active connection.
+  */
   unSubscribe(all: boolean, channels: string[] = ['appointment']) {
     (all) ? this.pubNub.unsubscribeAll() : this.pubNub.unsubscribe({ channels: channels });
   }
-
 }

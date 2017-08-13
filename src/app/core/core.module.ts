@@ -7,16 +7,14 @@ import { throwIfAlreadyLoaded } from "./module-import-guard";
 import { MaterialModule } from "./material-module";
 import { NavComponent } from "./nav/nav.component";
 
-const CommonModules = [MaterialModule];
-
 @NgModule({
   imports: [
     CommonModule,
-    ...CommonModules,
-    HttpModule
+    HttpModule,
+    MaterialModule
   ],
   declarations: [NavComponent],
-  exports: [...CommonModules, NavComponent],
+  exports: [MaterialModule, NavComponent],
   providers: [LoggerService]
 })
 export class CoreModule {

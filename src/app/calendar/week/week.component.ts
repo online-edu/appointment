@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { MdDialog, MdDialogRef } from '@angular/material';
+import { Title } from '@angular/platform-browser';
 
 import * as _ from "lodash";
 
@@ -29,10 +30,12 @@ export class WeekComponent implements OnInit, OnDestroy, AfterViewInit {
   @ViewChild('body') private scroller: ElementRef;
 
   constructor(public dialog: MdDialog,
+    private titleService: Title,
     private restApi: RestApi,
     private pubNub: PubnubService,
     private util: Util,
     private appointment: AppointmentService) {
+    this.titleService.setTitle('Week view | Calendar');
     this.pubNub.init();
     this.pubNub.subscribe();
     this.appointment.sync().subscribe(appointment => {
@@ -80,12 +83,8 @@ export class WeekComponent implements OnInit, OnDestroy, AfterViewInit {
           let i = this.util.findIndex(this.day.monday, appointment.id);
           this.day.monday[i] = appointment;
         }
-        else {
-          console.log(appointment);
-          console.log(_.values(_.groupBy(appointment, 'startTime')));
-          let a = _.values(_.groupBy(appointment, 'startTime'));
+        else
           this.day.monday = appointment;
-        }
 
         break;
 

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-calendar',
@@ -7,6 +8,8 @@ import { Component } from '@angular/core';
 })
 export class CalendarComponent {
 
-  constructor() { }
+  constructor(private titleService: Title) {
+    this.titleService.setTitle('Calendar');
+  }
 
 }

@@ -1,16 +1,6 @@
- md-input-container{
-        width: 100%;
-        margin: 8px auto;
-        input{
-            border-bottom:none;
-            height:auto;
-            margin: 0;
-            &:focus{
-                border-bottom: none;
-                box-shadow:none;
-            }
-        }
-        textarea{
-            resize: none;
-        }    
-    }
+ md-input-container {
+     width: 100%;     
+ }
+.mat-dialog-actions{
+    float: right;
+}

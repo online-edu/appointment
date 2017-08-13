@@ -11,10 +11,10 @@
         <div class="hourly" *ngFor="let hour of hours"></div>
       </div>
     </div>
-    <div class="apps-skeleton">
+    <div class="events-skeleton">
       <table>
         <tr>
-          <td style="width: 80px;">
+          <td [ngStyle]="{'width':'80px'}">
           </td>
           <td>
             <div class="event-container">
@@ -33,7 +33,6 @@
                   <span>{{event.startTime | date:'HH:mm'}} to {{event.endTime | date:'HH:mm'}}</span>
                 </div>
               </div>
-              <!-- <div class="event mat-elevation-z2" [ngStyle]="{'height': getHeight(500, 700),'top':getHeight(300, 600)}"></div> -->
             </div>
           </td>
           <td>
@@ -43,7 +42,6 @@
                   <span>{{event.startTime | date:'HH:mm'}} to {{event.endTime | date:'HH:mm'}}</span>
                 </div>
               </div>
-              <!-- <div class="event mat-elevation-z2" [ngStyle]="{'height': getHeight(500, 700),'top':getHeight(300, 600)}"></div> -->
             </div>
           </td>
           <td>
@@ -53,7 +51,6 @@
                   <span>{{event.startTime | date:'HH:mm'}} to {{event.endTime | date:'HH:mm'}}</span>
                 </div>
               </div>
-              <!-- <div class="event mat-elevation-z2" [ngStyle]="{'height': getHeight(500, 700),'top':getHeight(300, 600)}"></div> -->
             </div>
           </td>
           <td>
@@ -63,7 +60,6 @@
                   <span>{{event.startTime | date:'HH:mm'}} to {{event.endTime | date:'HH:mm'}}</span>
                 </div>
               </div>
-              <!-- <div class="event mat-elevation-z2" [ngStyle]="{'height': getHeight(500, 700),'top':getHeight(300, 600)}"></div> -->
             </div>
           </td>
           <td>
@@ -73,7 +69,6 @@
                   <span>{{event.startTime | date:'HH:mm'}} to {{event.endTime | date:'HH:mm'}}</span>
                 </div>
               </div>
-              <!-- <div class="event mat-elevation-z2" [ngStyle]="{'height': getHeight(500, 700),'top':getHeight(300, 600)}"></div> -->
             </div>
           </td>
           <td>
@@ -83,7 +78,6 @@
                   <span>{{event.startTime | date:'HH:mm'}} to {{event.endTime | date:'HH:mm'}}</span>
                 </div>
               </div>
-              <!-- <div class="event mat-elevation-z2" [ngStyle]="{'height': getHeight(500, 700),'top':getHeight(300, 600)}"></div> -->
             </div>
           </td>
         </tr>
