@@ -8,6 +8,8 @@ export class Days {
     friday = Array<Appointment>();
     saturday = Array<Appointment>();
     sunday = Array<Appointment>();
+
+    static all = () => ['Monday 26', 'Tuesday 27', 'Wednesday 28', 'Thursday 29', 'Friday 30', 'Saturday 1', 'Sunday 2']
 }
 
 export enum Day {

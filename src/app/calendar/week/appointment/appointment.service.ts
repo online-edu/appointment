@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { MdSnackBar } from "@angular/material";
+import { MdSnackBar } from '@angular/material';
+
 import { Observable } from "rxjs/Observable";
 import { BehaviorSubject } from "rxjs/BehaviorSubject";
 
@@ -9,7 +10,9 @@ import { Appointment } from "../shared/appointment";
 @Injectable()
 export class AppointmentService {
 
-  constructor(public snackBar: MdSnackBar, private restApi: RestApi) { }
+  constructor(
+    public snackBar: MdSnackBar,
+    private restApi: RestApi) { }
 
   private appointment$ = new BehaviorSubject<Appointment>(new Appointment());
 
@@ -24,4 +27,5 @@ export class AppointmentService {
       duration: 3500,
     });
   }
+
 }
