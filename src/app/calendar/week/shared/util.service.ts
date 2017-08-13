@@ -40,15 +40,14 @@ export class UtilService {
     const hourlyHeight = 90, topPosition = 100.5;
     let diff = this.meetingDuration(event.startTime, event.endTime);
     let hhmm: any = moment(event.startTime).format('HH:mm').split(':');
-    console.log( diff);
+    console.log(diff);
     let top = (hhmm[1] == 0) ? (hhmm[0] * topPosition) : (hhmm[0] * topPosition) + 40;
     let height = diff * hourlyHeight;
-    if (hhmm[1] == 15 || hhmm[1] == 45) {            
+    if (hhmm[1] == 45) {
       top += 35;
     }
     let color = event.available ? '#3F51B5' : '#ff4081';
-    // console.log(height, top);
-    return { 'height': height + 'px', 'top': `${top}px`, 'background-color': color, 'border-color': color };
+    return { 'height': `${height}px`, 'top': `${top}px`, 'background-color': color, 'border-color': color };
   }
   /**
   * Return an appointment object which is grouped by date uniquely.
