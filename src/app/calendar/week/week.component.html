@@ -1,0 +1,93 @@
+<div class="week">
+  <div class="header">
+    <div class="day" *ngFor="let day of days">{{day}}</div>
+  </div>
+  <div class="body">
+    <div class="time-strip">
+      <div class="hour" *ngFor="let hour of hours">{{hour}}</div>
+    </div>
+    <div class="schedules">
+      <div class="appointment" *ngFor="let day of days;">
+        <div class="hourly" *ngFor="let hour of hours"></div>
+      </div>
+    </div>
+    <div class="apps-skeleton">
+      <table>
+        <tr>
+          <td style="width: 80px;">
+          </td>
+          <td>
+            <div class="event-container">
+              <div *ngFor="let event of day.monday">
+                <div (click)="onEventClick(event)" class="event mat-elevation-z2" [ngStyle]="getStyle(event)">
+                  <span>{{event.startTime | date:'HH:mm'}} to {{event.endTime | date:'HH:mm'}}</span>
+                </div>
+              </div>
+              <!-- <div class="event mat-elevation-z2" [ngStyle]="{'height': getHeight(500, 700),'top':getHeight(300, 600)}"></div> -->
+            </div>
+          </td>
+          <td>
+            <div class="event-container">
+              <div *ngFor="let event of day.tuesday">
+                <div (click)="onEventClick(event)" class="event mat-elevation-z2" [ngStyle]="getStyle(event)">
+                  <span>{{event.startTime | date:'HH:mm'}} to {{event.endTime | date:'HH:mm'}}</span>
+                </div>
+              </div>
+              <!-- <div class="event mat-elevation-z2" [ngStyle]="{'height': getHeight(500, 700),'top':getHeight(300, 600)}"></div> -->
+            </div>
+          </td>
+          <td>
+            <div class="event-container">
+              <div *ngFor="let event of day.wednesday">
+                <div (click)="onEventClick(event)" class="event mat-elevation-z2" [ngStyle]="getStyle(event)">
+                  <span>{{event.startTime | date:'HH:mm'}} to {{event.endTime | date:'HH:mm'}}</span>
+                </div>
+              </div>
+              <!-- <div class="event mat-elevation-z2" [ngStyle]="{'height': getHeight(500, 700),'top':getHeight(300, 600)}"></div> -->
+            </div>
+          </td>
+          <td>
+            <div class="event-container">
+              <div *ngFor="let event of day.thursday">
+                <div (click)="onEventClick(event)" class="event mat-elevation-z2" [ngStyle]="getStyle(event)">
+                  <span>{{event.startTime | date:'HH:mm'}} to {{event.endTime | date:'HH:mm'}}</span>
+                </div>
+              </div>
+              <!-- <div class="event mat-elevation-z2" [ngStyle]="{'height': getHeight(500, 700),'top':getHeight(300, 600)}"></div> -->
+            </div>
+          </td>
+          <td>
+            <div class="event-container">
+              <div *ngFor="let event of day.friday">
+                <div (click)="onEventClick(event)" class="event mat-elevation-z2" [ngStyle]="getStyle(event)">
+                  <span>{{event.startTime | date:'HH:mm'}} to {{event.endTime | date:'HH:mm'}}</span>
+                </div>
+              </div>
+              <!-- <div class="event mat-elevation-z2" [ngStyle]="{'height': getHeight(500, 700),'top':getHeight(300, 600)}"></div> -->
+            </div>
+          </td>
+          <td>
+            <div class="event-container">
+              <div *ngFor="let event of day.saturday">
+                <div (click)="onEventClick(event)" class="event mat-elevation-z2" [ngStyle]="getStyle(event)">
+                  <span>{{event.startTime | date:'HH:mm'}} to {{event.endTime | date:'HH:mm'}}</span>
+                </div>
+              </div>
+              <!-- <div class="event mat-elevation-z2" [ngStyle]="{'height': getHeight(500, 700),'top':getHeight(300, 600)}"></div> -->
+            </div>
+          </td>
+          <td>
+            <div class="event-container">
+              <div *ngFor="let event of day.sunday">
+                <div (click)="onEventClick(event)" class="event mat-elevation-z2" [ngStyle]="getStyle(event)">
+                  <span>{{event.startTime | date:'HH:mm'}} to {{event.endTime | date:'HH:mm'}}</span>
+                </div>
+              </div>
+              <!-- <div class="event mat-elevation-z2" [ngStyle]="{'height': getHeight(500, 700),'top':getHeight(300, 600)}"></div> -->
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>

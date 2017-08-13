@@ -1,9 +1,15 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
 
+import { PubNubAngular } from "pubnub-angular2";
+import 'hammerjs';
+
+import { CoreModule } from "./core/core.module";
+import { AppRoutingModule } from "./app-routing.module";
+import { CalendarModule } from "./calendar/calendar.module";
 import { AppComponent } from './app.component';
+import { RestApi } from "./shared/services/rest-api";
 
 @NgModule({
   declarations: [
@@ -11,10 +17,11 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    FormsModule,
-    HttpModule
+    BrowserAnimationsModule,
+    CoreModule,    
+    AppRoutingModule
   ],
-  providers: [],
+  providers: [RestApi, PubNubAngular],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
