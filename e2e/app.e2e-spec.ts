@@ -1,14 +1,24 @@
-import { AppointmentAppPage } from './app.po';
+import { Appointment } from './app.po';
+import { Calendar } from './calendar.po';
 
 describe('appointment-app App', () => {
-  let page: AppointmentAppPage;
+  let pageApp: Appointment, pageCal: Calendar;
 
   beforeEach(() => {
-    page = new AppointmentAppPage();
+    pageApp = new Appointment();
+    pageCal = new Calendar();
   });
 
-  it('should display message saying app works', () => {
-    page.navigateTo();
-    expect(page.getParagraphText()).toEqual('app works!');
+  it('should find toolbar', () => {
+    pageApp.navigateTo();
+    let title = pageApp.getTitle();
+    expect(title).toEqual('Calendar');
   });
+
+  it('should find the calender', () => {
+    pageCal.navigateTo();
+    let content = pageCal.getInnerContent();
+    expect(content).not.toBeNull();
+  })
+
 });
