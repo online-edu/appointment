@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 
 import { PubNubAngular } from "pubnub-angular2";
 import { AppointmentService } from "../../calendar/week/appointment/appointment.service";
+import { LoggerService } from "../../core/logger.service";
 
 @Injectable()
 export class PubnubService {
@@ -9,10 +10,11 @@ export class PubnubService {
   private readonly PUBLISH_KEY = 'pub-c-1bb756c2-8269-4d1a-aeb2-d85d90d75bab';
   private readonly SUBSCRIBE_KEY = 'sub-c-47c33716-7f53-11e7-a0e0-ba359f928353';
 
-  constructor(private pubNub: PubNubAngular, private appointment: AppointmentService) { }
+  constructor(private pubNub: PubNubAngular, private logger: LoggerService,
+    private appointment: AppointmentService) { }
 
   private notify(m) {
-    this.appointment.add(m);
+    this.appointment.update(m);
   }
 
   init() {
@@ -26,6 +28,7 @@ export class PubnubService {
         console.log(m);
       },
       message: (m) => {
+        // console.log(m);
         this.notify(m);
       }
     })
@@ -48,13 +51,14 @@ export class PubnubService {
     }, (status, response) => {
       let message, action;
       if (status.error) {
-        console.log(status);
+        this.logger.log(status);
         message = "Your appointment could not be set. Please Try again";
         action = "Okay";
       } else {
-        console.log('message Published w/ timetoken', response.timetoken);
+        this.logger.log(`message Published w/ timetoken ${response.timetoken}`);
         message = "Your appointment is created.";
         action = "Thanks";
+        this.notify(message);
       }
       this.appointment.notifyUser(message, action);
     });

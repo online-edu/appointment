@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { MdDialog, MdDialogRef } from '@angular/material';
 
 import * as _ from "lodash";
@@ -9,6 +9,7 @@ import { PubnubService } from "../../shared/services/pubnub.service";
 import { UtilService as Util } from "./shared/util.service";
 import { Day, Days } from "./day/day";
 import { Appointment } from "./shared/appointment";
+import { RestApi } from "../../shared/services/rest-api";
 
 const ACTION = "Okay";
 const NOT_AVAIBLE = "That slot is not available. We are sorry for inconvenience!";
@@ -19,13 +20,16 @@ const NOT_AVAIBLE = "That slot is not available. We are sorry for inconvenience!
   styleUrls: ['./week.component.scss'],
   providers: [PubnubService, AppointmentService, Util]
 })
-export class WeekComponent implements OnInit {
+export class WeekComponent implements OnInit, OnDestroy, AfterViewInit {
   days = Days.all();
   hours = this.util.getHours(24);
   day: Days = new Days();
   appointments;
 
+  @ViewChild('body') private scroller: ElementRef;
+
   constructor(public dialog: MdDialog,
+    private restApi: RestApi,
     private pubNub: PubnubService,
     private util: Util,
     private appointment: AppointmentService) {
@@ -40,11 +44,15 @@ export class WeekComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.appointment.getAll().
+    this.restApi.get('slots.json').
       subscribe(appointments => {
         this.appointments = appointments;
         this.init();
       });
+  }
+
+  ngAfterViewInit() {
+    this.scroller.nativeElement.scrollTop = this.scroller.nativeElement.scrollTop + 1400;
   }
 
   ngOnDestroy() {
@@ -56,7 +64,7 @@ export class WeekComponent implements OnInit {
   onEventClick = (event: Appointment) => (event.available) ? this.createAppointment(event) : this.appointment.notifyUser(NOT_AVAIBLE, ACTION);
 
   private createAppointment(event: Appointment) {
-    let dialogRef = this.dialog.open(DialogComponent, this.util.dialogConfig(event));
+    let dialogRef = this.dialog.open(DialogComponent, this.util.dialogConfig(Object.assign({}, event)));
     dialogRef.afterClosed().subscribe(result => {
       let appointment: Appointment = dialogRef.componentInstance.currentEvent;
       if (dialogRef.componentInstance.appointment.valid) {
@@ -72,8 +80,13 @@ export class WeekComponent implements OnInit {
           let i = this.util.findIndex(this.day.monday, appointment.id);
           this.day.monday[i] = appointment;
         }
-        else
+        else {
+          console.log(appointment);
+          console.log(_.values(_.groupBy(appointment, 'startTime')));
+          let a = _.values(_.groupBy(appointment, 'startTime'));
           this.day.monday = appointment;
+        }
+
         break;
 
       case Day.TUE:
@@ -82,7 +95,7 @@ export class WeekComponent implements OnInit {
           this.day.tuesday[i] = appointment;
         }
         else
-          this.day.tuesday = appointment;        
+          this.day.tuesday = appointment;
         break;
 
       case Day.WED:
@@ -91,7 +104,7 @@ export class WeekComponent implements OnInit {
           this.day.wednesday[i] = appointment;
         }
         else
-          this.day.wednesday = appointment;        
+          this.day.wednesday = appointment;
         break;
 
       case Day.THU:
@@ -100,7 +113,7 @@ export class WeekComponent implements OnInit {
           this.day.thursday[i] = appointment;
         }
         else
-          this.day.thursday = appointment;        
+          this.day.thursday = appointment;
         break;
 
       case Day.FRI:
@@ -109,7 +122,7 @@ export class WeekComponent implements OnInit {
           this.day.friday[i] = appointment;
         }
         else
-          this.day.friday = appointment;        
+          this.day.friday = appointment;
         break;
 
       case Day.SAT:
@@ -127,7 +140,7 @@ export class WeekComponent implements OnInit {
           this.day.sunday[i] = appointment;
         }
         else
-          this.day.sunday = appointment;        
+          this.day.sunday = appointment;
         break;
     }
   }

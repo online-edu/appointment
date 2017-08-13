@@ -12,15 +12,18 @@ export class AppointmentService {
 
   constructor(
     public snackBar: MdSnackBar,
-    private restApi: RestApi) { }
+    // private restApi: RestApi
+  ) { }
 
   private appointment$ = new BehaviorSubject<Appointment>(new Appointment());
 
-  add = (appointment: Appointment) => this.appointment$.next(appointment);
+  update = (appointment: Appointment) => this.appointment$.next(appointment);
 
   sync = (): Observable<Appointment> => this.appointment$.asObservable();
 
-  getAll = () => this.restApi.get('slots.json');
+  // getAll = () => this.restApi.get('slots.json');
+
+  getAll = () => { return Observable.of({})}
 
   notifyUser(message: string, action: string) {
     this.snackBar.open(message, action, {

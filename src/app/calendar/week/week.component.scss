@@ -1,3 +1,10 @@
+@mixin block($border-color){
+    border-bottom: 2px solid $border-color;
+    min-height: 60px;
+    max-height: 60px;
+    padding: 19px;                
+    line-height: 50px;
+}
 .week{
     .header{
         height: 60px;
@@ -10,11 +17,11 @@
             height:100%;
             line-height: 60px;            
             text-align: center;    
-            color: #686868;
-            // border: thin solid #00FF00;
+            color: #686868;            
         }
     }
-    .body{        
+    .body{
+        padding-right: 10px;        
         max-height: 600px;
         overflow-y: auto;
         position: relative;
@@ -26,11 +33,7 @@
             color: #686868;
             width: 80px;
             .hour{
-                border-bottom: 2px solid #FFF;
-                min-height: 60px;
-                max-height: 60px;
-                padding: 19px;                
-                line-height: 50px;                          
+                @include block(#FFF);                   
             }
         }
         .schedules{        
@@ -42,12 +45,8 @@
                 text-align: center;                
                 color: #686868;
                 .hourly{
-                    border-bottom: 2px solid #dedede;
-                    min-height: 60px;             
-                    max-height: 60px;       
-                    padding: 19px;                    
+                    @include block(#DEDEDE);                            
                     transition: all 0.2s ease-in;
-                    line-height: 50px;            
                     &:hover{
                         background-color:#dedede;
                         cursor: pointer; 
@@ -59,7 +58,7 @@
             position: absolute;
             top: 0;
             td{
-                width: 160px;
+                width: 154px;
             }
             .event-container{
                 position: relative;
