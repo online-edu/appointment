@@ -5,6 +5,16 @@
     padding: 19px;
     line-height: 50px;
 }
+@mixin event-content($text, $icon, $left) {
+    span {
+        font-size: $text;
+    }
+    .material-icons {
+        font-size: $icon;
+        position: absolute;
+        left: $left;
+    }
+}
 .week {
     .header {
         height: 60px;
@@ -48,7 +58,7 @@
                     @include block(#DEDEDE);
                     transition: all 0.2s ease-in;
                     &:hover {
-                        background-color: #dedede;
+                        background-color: #DEDEDE;
                         cursor: pointer;
                     }
                 }
@@ -70,22 +80,17 @@
                     cursor: pointer;
                     position: absolute;
                     text-align: center;
-                    span {
-                        color: #FFF;
-                        font-size: 14px;
+                    color: #FFF;
+                    padding-top: 5px;
+                    transition: all 0.2s ease-in;
+                    @include event-content(14px, 18px, 10px);
+                    &:hover {
+                        transform: scale(1.2);
+                        z-index: 999;
+                        box-shadow: 0 3px 5px -1px rgba(0, 0, 0, .2), 0 6px 10px 0 rgba(0, 0, 0, .14), 0 1px 18px 0 rgba(0, 0, 0, .12);
+                        @include event-content(16px, 19px, 3px);
                     }
-                    // .material-icons{
-                    //     font-size: 18px;
-                    // }
-                }
-                .inline {
-                    display: inline-block;
-                    width: 47%;
-                    background-color: #9A2D6A;
-                }
-                .left {
-                    left: 50%;
-                }
+                }                
             }
         }
     }

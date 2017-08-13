@@ -20,6 +20,7 @@
             <div class="event-container">
               <div *ngFor="let event of day.monday">
                 <div (click)="onEventClick(event)" class="event mat-elevation-z2" [ngStyle]="getStyle(event)">
+                  <md-icon>schedule</md-icon>
                   <span>{{event.startTime | date:'HH:mm'}} to {{event.endTime | date:'HH:mm'}}</span>
                 </div>
               </div>
@@ -30,6 +31,7 @@
             <div class="event-container">
               <div *ngFor="let event of day.tuesday">
                 <div (click)="onEventClick(event)" class="event mat-elevation-z2" [ngStyle]="getStyle(event)">
+                  <md-icon>schedule</md-icon>
                   <span>{{event.startTime | date:'HH:mm'}} to {{event.endTime | date:'HH:mm'}}</span>
                 </div>
               </div>
@@ -39,6 +41,7 @@
             <div class="event-container">
               <div *ngFor="let event of day.wednesday">
                 <div (click)="onEventClick(event)" class="event mat-elevation-z2" [ngStyle]="getStyle(event)">
+                  <md-icon>schedule</md-icon>
                   <span>{{event.startTime | date:'HH:mm'}} to {{event.endTime | date:'HH:mm'}}</span>
                 </div>
               </div>
@@ -48,6 +51,7 @@
             <div class="event-container">
               <div *ngFor="let event of day.thursday">
                 <div (click)="onEventClick(event)" class="event mat-elevation-z2" [ngStyle]="getStyle(event)">
+                  <md-icon>schedule</md-icon>
                   <span>{{event.startTime | date:'HH:mm'}} to {{event.endTime | date:'HH:mm'}}</span>
                 </div>
               </div>
@@ -57,6 +61,7 @@
             <div class="event-container">
               <div *ngFor="let event of day.friday">
                 <div (click)="onEventClick(event)" class="event mat-elevation-z2" [ngStyle]="getStyle(event)">
+                  <md-icon>schedule</md-icon>
                   <span>{{event.startTime | date:'HH:mm'}} to {{event.endTime | date:'HH:mm'}}</span>
                 </div>
               </div>
@@ -66,6 +71,7 @@
             <div class="event-container">
               <div *ngFor="let event of day.saturday">
                 <div (click)="onEventClick(event)" class="event mat-elevation-z2" [ngStyle]="getStyle(event)">
+                  <md-icon>schedule</md-icon>
                   <span>{{event.startTime | date:'HH:mm'}} to {{event.endTime | date:'HH:mm'}}</span>
                 </div>
               </div>
@@ -75,6 +81,7 @@
             <div class="event-container">
               <div *ngFor="let event of day.sunday">
                 <div (click)="onEventClick(event)" class="event mat-elevation-z2" [ngStyle]="getStyle(event)">
+                  <md-icon>schedule</md-icon>
                   <span>{{event.startTime | date:'HH:mm'}} to {{event.endTime | date:'HH:mm'}}</span>
                 </div>
               </div>

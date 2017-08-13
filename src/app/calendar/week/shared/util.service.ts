@@ -37,23 +37,18 @@ export class UtilService {
   * Return the style object that will be rendered as appointment time slots.
   */
   style(event) {
-    const hourlyHeight = 95, topPosition = 100.5;
+    const hourlyHeight = 90, topPosition = 100.5;
     let diff = this.meetingDuration(event.startTime, event.endTime);
     let hhmm: any = moment(event.startTime).format('HH:mm').split(':');
-    let top = ((hhmm[1] == 0) ? hhmm[0] * topPosition : (hhmm[0] * topPosition) + 45) + 'px';
+    console.log( diff);
+    let top = (hhmm[1] == 0) ? (hhmm[0] * topPosition) : (hhmm[0] * topPosition) + 40;
     let height = diff * hourlyHeight;
-    let color = event.available ? '#3F51B5' : '#ff4081';
-    /* let height, lineHeight;
-    if (diff % 1 != 0) {
-      height = diff * hourlyHeight - 10
-      lineHeight = 2.5;
+    if (hhmm[1] == 15 || hhmm[1] == 45) {            
+      top += 35;
     }
-    else {
-      lineHeight = 6;
-      height = diff * hourlyHeight;
-    } */
-    height = (height > 2415) ? 2415 : height;
-    return { 'height': height + 'px', 'top': top, 'background-color': color, 'border-color': color };
+    let color = event.available ? '#3F51B5' : '#ff4081';
+    // console.log(height, top);
+    return { 'height': height + 'px', 'top': `${top}px`, 'background-color': color, 'border-color': color };
   }
   /**
   * Return an appointment object which is grouped by date uniquely.
