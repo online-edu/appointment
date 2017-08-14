@@ -1,4 +1,5 @@
 export const environment = {
   production: true,
-  api: '../assets/data/'
+  // TODO: appointment is required while hosting with github pages. 
+  api: '../appointment/assets/data/'
 };

@@ -508,7 +508,8 @@ module.exports = __webpack_require__(149);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return environment; });
 var environment = {
     production: true,
-    api: '../assets/data/'
+    // TODO: appointment is required while hosting with github pages. 
+    api: '../appointment/assets/data/'
 };
 //# sourceMappingURL=environment.js.map
 
