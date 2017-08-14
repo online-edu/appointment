@@ -2,6 +2,8 @@
 
 This project is simple show case of appointment scheduler which offers real time updates on whether appointment is `available` or `reserved` with help of PubNub.
 
+### [Demo](https://online-edu.github.io/appointment/)
+
 ## Prerequisites
 
 **BEFORE YOU RUN:** Install Angular CLI

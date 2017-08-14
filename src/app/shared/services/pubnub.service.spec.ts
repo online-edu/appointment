@@ -1,5 +1,12 @@
 import { TestBed, inject } from '@angular/core/testing';
 
+import {
+  Headers, BaseRequestOptions,
+  Response, HttpModule, Http, XHRBackend, RequestMethod
+} from '@angular/http';
+import { ResponseOptions } from '@angular/http';
+import { MockBackend, MockConnection } from '@angular/http/testing';
+import { RestApi } from "./rest-api";
 import { MdSnackBar } from "@angular/material";
 import { PubnubService } from './pubnub.service';
 import { PubNubAngular } from "pubnub-angular2";
@@ -23,7 +30,17 @@ describe('PubnubService', () => {
         PubnubService,
         PubNubAngular,
         AppointmentService,
-        LoggerService
+        LoggerService,
+        RestApi, MockBackend,
+        BaseRequestOptions,
+        {
+          provide: Http,
+          deps: [MockBackend, BaseRequestOptions],
+          useFactory:
+          (backend: XHRBackend, defaultOptions: BaseRequestOptions) => {
+            return new Http(backend, defaultOptions);
+          }
+        }
       ]
     });
     pubnubService = TestBed.get(PubNubAngular);

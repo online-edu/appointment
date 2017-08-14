@@ -16,10 +16,10 @@ import { RestApi } from "./shared/services/rest-api";
     AppComponent
   ],
   imports: [
+    AppRoutingModule,
     BrowserModule,
     BrowserAnimationsModule,
-    CoreModule,
-    AppRoutingModule
+    CoreModule
   ],
   providers: [PubNubAngular, RestApi],
   bootstrap: [AppComponent]

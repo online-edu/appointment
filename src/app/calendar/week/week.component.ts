@@ -10,7 +10,6 @@ import { PubnubService } from "../../shared/services/pubnub.service";
 import { UtilService as Util } from "./shared/util.service";
 import { Day, Days } from "./day/day";
 import { Appointment } from "./shared/appointment";
-import { RestApi } from "../../shared/services/rest-api";
 
 const ACTION = "Okay";
 const NOT_AVAIBLE = "That slot is not available. We are sorry for inconvenience!";
@@ -31,13 +30,14 @@ export class WeekComponent implements OnInit, OnDestroy, AfterViewInit {
 
   constructor(public dialog: MdDialog,
     private titleService: Title,
-    private restApi: RestApi,
     private pubNub: PubnubService,
     private util: Util,
     private appointment: AppointmentService) {
+
     this.titleService.setTitle('Week view | Calendar');
     this.pubNub.init();
     this.pubNub.subscribe();
+
     this.appointment.sync().subscribe(appointment => {
       let tempAppointment: any = appointment;
       if (tempAppointment.message) {
@@ -47,11 +47,7 @@ export class WeekComponent implements OnInit, OnDestroy, AfterViewInit {
   }
 
   ngOnInit() {
-    this.restApi.get('slots.json').
-      subscribe(appointments => {
-        this.appointments = appointments;
-        this.init();
-      });
+    this.getAppointments();
   }
 
   ngAfterViewInit() {
@@ -65,6 +61,22 @@ export class WeekComponent implements OnInit, OnDestroy, AfterViewInit {
   getStyle = (event: Appointment) => this.util.style(event);
 
   onEventClick = (event: Appointment) => (event.available) ? this.createAppointment(event) : this.appointment.notifyUser(NOT_AVAIBLE, ACTION);
+
+  init() {
+    let appointmentsByDate: any = this.util.groupByDate(this.appointments);
+    _.forEach(appointmentsByDate, appointment => {
+      let tempAppointment: any = _.first(appointment);
+      this.updateAppointments(parseInt(tempAppointment.day), appointment);
+    });
+  }
+
+  private getAppointments() {
+    this.appointment.getAll().
+      subscribe(appointments => {
+        this.appointments = appointments;
+        this.init();
+      });
+  }
 
   private createAppointment(event: Appointment) {
     let dialogRef = this.dialog.open(DialogComponent, this.util.dialogConfig(Object.assign({}, event)));
@@ -144,11 +156,4 @@ export class WeekComponent implements OnInit, OnDestroy, AfterViewInit {
     }
   }
 
-  init() {
-    let appointmentsByDate: any = this.util.groupByDate(this.appointments);
-    _.forEach(appointmentsByDate, appointment => {
-      let tempAppointment: any = _.first(appointment);
-      this.updateAppointments(parseInt(tempAppointment.day), appointment);
-    });
-  }
 }

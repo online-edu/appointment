@@ -1,7 +1,13 @@
-import { TestBed, inject } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed, inject } from '@angular/core/testing';
+import {
+  Headers, BaseRequestOptions,
+  Response, HttpModule, Http, XHRBackend, RequestMethod
+} from '@angular/http';
+import { ResponseOptions } from '@angular/http';
+import { MockBackend, MockConnection } from '@angular/http/testing';
 import { Observable } from "rxjs/Observable";
-import { BehaviorSubject } from "rxjs/BehaviorSubject";
 
+import { RestApi } from "../../../shared/services/rest-api"
 import { MaterialModule } from "../../../core/material-module";
 import { AppointmentService } from './appointment.service';
 import { Appointment } from "../shared/appointment";
@@ -15,12 +21,23 @@ describe('AppointmentService', () => {
     "available": false,
     "day": 1
   };
-
+  let mockBackend: MockBackend;
+  
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [MaterialModule],
-      providers: [AppointmentService]
+      providers: [AppointmentService, RestApi, MockBackend,
+        BaseRequestOptions,
+        {
+          provide: Http,
+          deps: [MockBackend, BaseRequestOptions],
+          useFactory:
+          (backend: XHRBackend, defaultOptions: BaseRequestOptions) => {
+            return new Http(backend, defaultOptions);
+          }
+        }]
     });
+    mockBackend = TestBed.get(MockBackend);
     appointmentService = TestBed.get(AppointmentService);
 
   });
@@ -34,5 +51,24 @@ describe('AppointmentService', () => {
     expect(service.update).toHaveBeenCalled();
     expect(service.sync).toHaveBeenCalled();
   }));
-  
+
+  it('should get all appointments',
+    async(inject([RestApi], (restService) => {
+      mockBackend.connections.subscribe(
+        (connection: MockConnection) => {
+          connection.mockRespond(new Response(
+            new ResponseOptions({
+              body: [
+                {
+                  id: 26
+                }]
+            }
+            )));
+        });
+      restService.get('slots.json').subscribe(
+        (appointment) => {
+          expect(appointment.length).toBeDefined();
+        });
+    })));
+
 });
