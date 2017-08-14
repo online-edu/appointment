@@ -15,15 +15,11 @@ import { Appointment } from "../shared/appointment";
 export class AppointmentService {
   private appointment$ = new BehaviorSubject<Appointment>(new Appointment());
 
-  constructor(public snackBar: MdSnackBar) { }
+  constructor(public snackBar: MdSnackBar, private restApi: RestApi) { }
   /**
-  * Updates view for new subscriptions modifications.
+  * Fetches all appointments from backend.
   */
-  update = (appointment: Appointment) => this.appointment$.next(appointment);
-  /**
-  * Observes active user's subscription for new messages.
-  */
-  sync = (): Observable<Appointment> => this.appointment$.asObservable();
+  getAll = () => this.restApi.get('slots.json');
   /**
   * Notifies user on specific activity.
   */
@@ -32,4 +28,12 @@ export class AppointmentService {
       duration: 3500,
     });
   }
+  /**
+  * Observes active user's subscription for new messages.
+  */
+  sync = (): Observable<Appointment> => this.appointment$.asObservable();
+  /**
+  * Updates view for new subscriptions modifications.
+  */
+  update = (appointment: Appointment) => this.appointment$.next(appointment);
 }
