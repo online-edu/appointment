@@ -33024,7 +33024,6 @@ var UtilService = (function () {
         var hourlyHeight = 90, topPosition = 100.5;
         var diff = this.meetingDuration(event.startTime, event.endTime);
         var hhmm = __WEBPACK_IMPORTED_MODULE_2_moment__(event.startTime).format('HH:mm').split(':');
-        console.log(diff);
         var top = (hhmm[1] == 0) ? (hhmm[0] * topPosition) : (hhmm[0] * topPosition) + 40;
         var height = diff * hourlyHeight;
         if (hhmm[1] == 45) {

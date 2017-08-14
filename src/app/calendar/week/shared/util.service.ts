@@ -39,8 +39,7 @@ export class UtilService {
   style(event) {
     const hourlyHeight = 90, topPosition = 100.5;
     let diff = this.meetingDuration(event.startTime, event.endTime);
-    let hhmm: any = moment(event.startTime).format('HH:mm').split(':');
-    console.log(diff);
+    let hhmm: any = moment(event.startTime).format('HH:mm').split(':');    
     let top = (hhmm[1] == 0) ? (hhmm[0] * topPosition) : (hhmm[0] * topPosition) + 40;
     let height = diff * hourlyHeight;
     if (hhmm[1] == 45) {
