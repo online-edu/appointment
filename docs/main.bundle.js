@@ -5,7 +5,7 @@ webpackJsonp([2,6],{
 
 var map = {
 	"app/calendar/calendar.module": [
-		502,
+		501,
 		0
 	]
 };
@@ -128,7 +128,7 @@ MaterialModule = __decorate([
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(65);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Rx__ = __webpack_require__(236);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Rx__ = __webpack_require__(235);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Rx___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_Rx__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__(94);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RestApi; });
@@ -274,8 +274,7 @@ var AppComponent = (function () {
 AppComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["g" /* Component */])({
         selector: 'app-root',
-        template: __webpack_require__(233),
-        styles: [__webpack_require__(224)]
+        template: __webpack_require__(232)
     })
 ], AppComponent);
 
@@ -292,7 +291,7 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_pubnub_angular2__ = __webpack_require__(159);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_pubnub_angular2___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_pubnub_angular2__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_hammerjs__ = __webpack_require__(226);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_hammerjs__ = __webpack_require__(225);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_hammerjs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_hammerjs__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_routing_module__ = __webpack_require__(164);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__core_core_module__ = __webpack_require__(167);
@@ -325,10 +324,10 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_7__app_component__["a" /* AppComponent */]
         ],
         imports: [
+            __WEBPACK_IMPORTED_MODULE_5__app_routing_module__["a" /* AppRoutingModule */],
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
             __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
-            __WEBPACK_IMPORTED_MODULE_6__core_core_module__["a" /* CoreModule */],
-            __WEBPACK_IMPORTED_MODULE_5__app_routing_module__["a" /* AppRoutingModule */]
+            __WEBPACK_IMPORTED_MODULE_6__core_core_module__["a" /* CoreModule */]
         ],
         providers: [__WEBPACK_IMPORTED_MODULE_3_pubnub_angular2__["PubNubAngular"], __WEBPACK_IMPORTED_MODULE_8__shared_services_rest_api__["a" /* RestApi */]],
         bootstrap: [__WEBPACK_IMPORTED_MODULE_7__app_component__["a" /* AppComponent */]]
@@ -433,8 +432,8 @@ var NavComponent = (function () {
 NavComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["g" /* Component */])({
         selector: 'app-nav',
-        template: __webpack_require__(234),
-        styles: [__webpack_require__(225)]
+        template: __webpack_require__(233),
+        styles: [__webpack_require__(224)]
     }),
     __metadata("design:paramtypes", [])
 ], NavComponent);
@@ -446,25 +445,7 @@ NavComponent = __decorate([
 /***/ 224:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(31)();
-// imports
-
-
-// module
-exports.push([module.i, "", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
-
-/***/ }),
-
-/***/ 225:
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(31)();
+exports = module.exports = __webpack_require__(44)();
 // imports
 
 
@@ -479,21 +460,21 @@ module.exports = module.exports.toString();
 
 /***/ }),
 
-/***/ 233:
+/***/ 232:
 /***/ (function(module, exports) {
 
 module.exports = "<app-nav></app-nav>\n<router-outlet></router-outlet>"
 
 /***/ }),
 
-/***/ 234:
+/***/ 233:
 /***/ (function(module, exports) {
 
 module.exports = "<md-toolbar color=\"primary\" class=\"nav mat-elevation-z6\">\n  <md-icon class=\"icon\">menu</md-icon>\n  <span>Calendar</span>\n  <span class=\"fill-remaining-space\"></span>\n  <a class=\"right-item\">Day</a>|\n  <a class=\"right-item active\">Week</a>|\n  <a class=\"right-item\">Agenda</a>\n  <md-toolbar-row>\n  </md-toolbar-row>\n</md-toolbar>"
 
 /***/ }),
 
-/***/ 498:
+/***/ 497:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(149);
@@ -515,5 +496,5 @@ var environment = {
 
 /***/ })
 
-},[498]);
+},[497]);
 //# sourceMappingURL=main.bundle.js.map
