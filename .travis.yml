@@ -24,7 +24,7 @@ before_script:
 
 
 script: 
-  - karma start karma.conf.js --single-run
+  # - karma start karma.conf.js --single-run
 
 after_success:
 - ng build --prod --output-path docs --base-href /appointment/

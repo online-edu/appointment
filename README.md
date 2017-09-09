@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/online-edu/appointment.svg?branch=master)](https://travis-ci.org/online-edu/appointment)
+
 # Appointment App
 
 This project is simple show case of appointment scheduler which offers real time updates on whether appointment is `available` or `reserved` with help of PubNub.
